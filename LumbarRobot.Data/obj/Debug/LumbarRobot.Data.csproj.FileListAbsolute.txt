@@ -1,0 +1,12 @@
+E:\腰椎\LumbarRobot\LumbarRobot.Data\bin\Debug\LumbarRobot.Data.dll
+E:\腰椎\LumbarRobot\LumbarRobot.Data\bin\Debug\LumbarRobot.Data.pdb
+E:\腰椎\LumbarRobot\LumbarRobot.Data\obj\Debug\LumbarRobot.Data.dll
+E:\腰椎\LumbarRobot\LumbarRobot.Data\obj\Debug\LumbarRobot.Data.pdb
+E:\腰椎\LumbarRobot\LumbarRobot.Data\obj\Debug\LumbarRobot.Data.csprojResolveAssemblyReference.cache
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Data\bin\Debug\LumbarRobot.Data.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Data\bin\Debug\LumbarRobot.Data.pdb
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Data\obj\Debug\LumbarRobot.Data.csprojResolveAssemblyReference.cache
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Data\obj\Debug\LumbarRobot.Data.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Data\obj\Debug\LumbarRobot.Data.pdb
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Data\bin\Debug\LumbarRobot.Data.dll.CodeAnalysisLog.xml
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Data\bin\Debug\LumbarRobot.Data.dll.lastcodeanalysissucceeded

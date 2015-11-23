@@ -1,0 +1,11 @@
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.DAL\bin\Release\LumbarRobot.DAL.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.DAL\bin\Release\LumbarRobot.DAL.pdb
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.DAL\bin\Release\Iesi.Collections.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.DAL\bin\Release\LumbarRobot.Data.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.DAL\bin\Release\MySql.Data.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.DAL\bin\Release\MySql.Data.Entity.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.DAL\bin\Release\NHibernate.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.DAL\bin\Release\LumbarRobot.Data.pdb
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.DAL\obj\Release\LumbarRobot.DAL.csprojResolveAssemblyReference.cache
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.DAL\obj\Release\LumbarRobot.DAL.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.DAL\obj\Release\LumbarRobot.DAL.pdb

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LumbarRobot.Data.FitRecord, LumbarRobot.Data" table="FitRecord">
+		<id name="Id" type="String" unsaved-value="null">
+			<column name="FitID" length="96" sql-type="varchar" not-null="true" unique="true"/>
+              <generator class="assigned" /> 
+			
+		</id>
+		<property name="ModeID" type="Int32">
+			<column name="ModeID" sql-type="int" not-null="true"/>
+		</property>
+		<property name="PushRodValue" type="Single">
+			<column name="PushRodValue" sql-type="float" not-null="true"/>
+		</property>
+		<property name="PatientID" type="String">
+			<column name="PatientID" length="96" sql-type="varchar" not-null="true"/>
+		</property>
+		<property name="MaxAngle" type="Int32">
+			<column name="MaxAngle" sql-type="int" not-null="true"/>
+		</property>
+		<property name="MinAngle" type="Int32">
+			<column name="MinAngle" sql-type="int" not-null="true"/>
+		</property>
+    <property name="CreateTime" type="DateTime">
+      <column name="CreateTime" sql-type="datetime" not-null="true"/>
+    </property>
+    <property name="ExerciseDate" type="DateTime">
+      <column name="ExerciseDate" sql-type="datetime" not-null="true"/>
+    </property>
+	</class>
+</hibernate-mapping>

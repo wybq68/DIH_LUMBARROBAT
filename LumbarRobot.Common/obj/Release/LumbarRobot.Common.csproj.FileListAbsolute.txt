@@ -1,0 +1,8 @@
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Common\bin\Release\LumbarRobot.Common.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Common\bin\Release\LumbarRobot.Common.pdb
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Common\bin\Release\log4net.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Common\bin\Release\LumbarRobot.Communication.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Common\bin\Release\LumbarRobot.Communication.pdb
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Common\obj\Release\LumbarRobot.Common.csprojResolveAssemblyReference.cache
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Common\obj\Release\LumbarRobot.Common.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Common\obj\Release\LumbarRobot.Common.pdb

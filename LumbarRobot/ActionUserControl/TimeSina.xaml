@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="LumbarRobot.ActionUserControl.TimeSina"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" SizeChanged="UserControl_SizeChanged">
+    <Grid Name="myGrid" ClipToBounds="False">
+        <Canvas Name="MyCanvas" Background="#0D1FE5EF" ClipToBounds="False"  Margin="0,2,0,2" >
+            <!--<Polyline x:Name="polyline1" Points="" Stroke="#FFE48638" StrokeThickness="3" FillRule="EvenOdd"/>-->
+            <!--<Polyline x:Name="polyline2" Points="" Stroke="#FA158F1A" StrokeThickness="10" FillRule="EvenOdd"/>-->
+            <!--<Polyline x:Name="polyline3" Points="" Stroke="White" StrokeThickness="3" FillRule="EvenOdd"/>-->
+            <!--<Line x:Name="LinkLine" X1="100" X2="100"  Y1="0" Y2="300" Stroke="Red" StrokeThickness="10"></Line>-->
+        </Canvas>
+    </Grid>
+</UserControl>

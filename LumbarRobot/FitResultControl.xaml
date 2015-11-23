@@ -1,0 +1,797 @@
+﻿<UserControl x:Class="LumbarRobot.FitResultControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="1090"
+             Height="750" Width="1090">
+    
+    <UserControl.Resources>
+        <!--项目按钮-->
+        <Style x:Key="ProButton" TargetType="Button">
+            <Setter Property="Foreground" Value="white"/>
+            <!--修改模板属性-->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <!--控件模板-->
+                    <ControlTemplate TargetType="Button">
+                        <!--背景色-->
+                        <Border x:Name="back" Opacity="0.8" CornerRadius="3">
+                            <Border.BitmapEffect>
+                                <OuterGlowBitmapEffect Opacity="0.7" GlowSize="0" GlowColor="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Button.Background).(SolidColorBrush.Color)}"/>
+                            </Border.BitmapEffect>
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1.5">
+                                    <GradientBrush.GradientStops>
+                                        <GradientStopCollection>
+                                            <GradientStop Color="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Button.Background).(SolidColorBrush.Color)}" Offset="0.4"/>
+                                        </GradientStopCollection>
+                                    </GradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <!--前景色及边框-->
+                            <Border x:Name="fore" BorderThickness="1" CornerRadius="3" BorderBrush="#333333">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="#333333" Offset="0.5"/>
+                                            </GradientStopCollection>
+                                        </GradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <!--按钮内容-->
+                                <Border>
+                                    <TextBlock x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding  Content}" FontFamily="黑体" FontSize="16" Foreground="White" FontStretch="UltraExpanded">
+                                    </TextBlock>
+                                </Border>
+                            </Border>
+                        </Border>
+                        <!--触发器-->
+                        <ControlTemplate.Triggers>
+                            <!--鼠标移入移出-->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="6" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation To="#99cc00" BeginTime="0:0:0.2" Duration="0:0:0.2" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <!--按钮按下弹起-->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="3" Duration="0:0:0.1" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation To="#99cc00" Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <!--按钮失效-->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="#333333"/>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="0" Duration="0:0:0.3" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation To="#333333" Duration="0:0:0.3" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"/>
+                                            <ColorAnimation To="#333333" Duration="0:0:0.3" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Opacity)"/>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Opacity)"/>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Direction)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Color)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+            
+        </Style>
+
+        <!--img 背景色显示效果-->
+        <Style TargetType="ListBoxItem">
+            <Style.Resources>
+                <!--SelectedItem with focus-->
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#eeeeee" Opacity="0"/>
+                <!--SelectedItem without focus-->
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#eeeeee" Opacity="0"/>
+            </Style.Resources>
+        </Style>
+
+
+        <Style x:Key="{x:Type DocumentViewer}" TargetType="{x:Type DocumentViewer}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" />
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DocumentViewer}">
+                        <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Focusable="False">
+                            <Grid KeyboardNavigation.TabNavigation="Local">
+                                <Grid.Background>
+                                    <SolidColorBrush Color="{DynamicResource ControlLightColor}" />
+                                </Grid.Background>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <ScrollViewer Grid.Row="1" CanContentScroll="true" HorizontalScrollBarVisibility="Auto" x:Name="PART_ContentHost" IsTabStop="true">
+                                    <ScrollViewer.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="{DynamicResource ControlLightColor}"  Offset="0" />
+                                            <GradientStop Color="{DynamicResource ControlMediumColor}" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </ScrollViewer.Background>
+                                </ScrollViewer>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--文本样式1-->
+        <Style x:Key="ContentCenterStyle"
+               TargetType="{x:Type TextBlock}">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <!--DataGrid样式开始-->
+        <Style x:Key="DataGridStyle" TargetType="DataGrid">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="#FFFFFF" />
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="ColumnHeaderHeight" Value="33"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="CanUserReorderColumns" Value="False"/>
+            <Setter Property="CanUserResizeColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Foreground" Value="#333333"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontFamily" Value="Microsoft YaHei"/>
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                #cccccc
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="BorderBrush" Value="#d6d6d6"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <!--最小宽度-->
+                        <Setter Property="MinWidth" Value="60"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="RowStyle" >
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="Height" Value="40"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="Foreground" Value="#666666"/>
+                        <Setter Property="Background" Value="#FFFFFF" />
+                        <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="CellStyle" >
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Setter Property="BorderBrush" Value="#d6d6d6"/>
+                        <Setter Property="BorderThickness" Value="1,0,1,2" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True" >
+                                <Setter Property="Background" Value="#669900" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="RowHeaderWidth" Value="0"/>
+        </Style>
+        <!--DataGrid样式结束-->
+
+        <!--滚动条样式开始-->
+        <SolidColorBrush x:Key="HorizontalNormalBorderBrush" Color="#efefef" />
+        <SolidColorBrush x:Key="NormalBorderBrush" Color="#efefef" />
+        <SolidColorBrush x:Key="GlyphBrush" Color="#444" />
+
+
+        <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border Background="#efefef" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--ScrollBarLineButtonTop-->
+        <Style x:Key="ScrollBarLineButtonTop" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border
+          x:Name="Border"
+          Margin="1"
+          CornerRadius="2"
+          
+          BorderBrush="{StaticResource NormalBorderBrush}"
+          BorderThickness="0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/images/up.png"></ImageBrush>
+                            </Border.Background>
+                            <Path
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Fill="{StaticResource GlyphBrush}"
+            Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--ScrollBarLineButtonBot-->
+        <Style x:Key="ScrollBarLineButtonBot" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border
+          x:Name="Border"
+          Margin="1"
+          CornerRadius="2"
+          
+          BorderBrush="{StaticResource NormalBorderBrush}"
+          BorderThickness="0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/images/down.png"></ImageBrush>
+                            </Border.Background>
+                            <Path
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Fill="{StaticResource GlyphBrush}"
+            Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--ScrollBarLineButtonLeft-->
+        <Style x:Key="ScrollBarLineButtonLeft" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border
+          x:Name="Border"
+          Margin="1"
+          CornerRadius="2"
+          Width="35"
+          BorderBrush="{StaticResource NormalBorderBrush}"
+          BorderThickness="0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/images/left.png"></ImageBrush>
+                            </Border.Background>
+                            <Path
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Fill="{StaticResource GlyphBrush}"
+            Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--ScrollBarLineButtonRight-->
+        <Style x:Key="ScrollBarLineButtonRight" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border
+          x:Name="Border"
+          Margin="1"
+          CornerRadius="2"
+                            Width="42"
+          
+          BorderBrush="{StaticResource NormalBorderBrush}"
+          BorderThickness="0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/images/right.png"></ImageBrush>
+                            </Border.Background>
+                            <Path
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Fill="{StaticResource GlyphBrush}"
+            Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Width" Value="38"/>
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border>
+                            <Grid>
+                                <Border>
+                                    <Border.Background>
+                                        <!--头部图片-->
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Color="Gray" Offset="0.7"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--垂直-->
+        <ControlTemplate x:Key="VerticalScrollBar"
+            TargetType="{x:Type ScrollBar}">
+
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition MaxHeight="23"/>
+                    <RowDefinition />
+                    <RowDefinition MaxHeight="23"/>
+                </Grid.RowDefinitions>
+                <Border
+      Grid.RowSpan="3"
+      Grid.Row="0"
+      CornerRadius="0"
+      Background="Transparent" />
+                <RepeatButton
+            		Grid.Row="0"
+            		Style="{StaticResource ScrollBarLineButtonTop}"
+            		Height="23"
+            		Command="ScrollBar.LineUpCommand" VerticalAlignment="Top"
+      d:LayoutOverrides="Height"
+      />
+
+                <Track
+      Name="PART_Track"
+      Grid.Row="1"
+      IsDirectionReversed="true" >
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton Width="38"
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageUpCommand" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb
+                          Style="{StaticResource ScrollBarThumb}"  BorderBrush="{StaticResource HorizontalNormalBorderBrush}">
+                        </Thumb>
+                    </Track.Thumb>
+
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton Width="38"
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageDownCommand" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+                <RepeatButton
+            		Grid.Row="2"
+            		Style="{StaticResource ScrollBarLineButtonBot}"
+            		Height="23"
+            		Command="ScrollBar.LineDownCommand" d:LayoutOverrides="Height, GridBox" VerticalAlignment="Bottom"
+      />
+            </Grid>
+        </ControlTemplate>
+        <!--水平-->
+        <ControlTemplate x:Key="HorizontalScrollBar"
+            TargetType="{x:Type ScrollBar}">
+            <Grid Height="35" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="35"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition MaxWidth="35"/>
+                </Grid.ColumnDefinitions>
+                <Border
+      Grid.ColumnSpan="3"
+      CornerRadius="0"
+      Background="#efefef" />
+                <RepeatButton
+      Grid.Column="0"
+      Style="{StaticResource ScrollBarLineButtonLeft}"
+      Width="23"
+      Height="35"
+      Command="ScrollBar.LineLeftCommand"
+       />
+                <Track
+      x:Name="PART_Track"
+      Grid.Column="1"
+      IsDirectionReversed="False">
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageLeftCommand" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb
+          Style="{StaticResource ScrollBarThumb}"
+          Margin="0,1,0,1"
+          BorderBrush="{StaticResource NormalBorderBrush}">
+
+                            <Thumb.Background>
+                                <ImageBrush ImageSource="/images/bar1.png"  />
+                            </Thumb.Background>
+
+                        </Thumb>
+                    </Track.Thumb>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageRightCommand" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+                <RepeatButton
+      Grid.Column="3"
+      Style="{StaticResource ScrollBarLineButtonRight}"
+      Width="35"
+                    Height="35"
+      Command="ScrollBar.LineRightCommand"
+      />
+            </Grid>
+        </ControlTemplate>
+        <!--双向Bar-->
+        <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Style.Triggers>
+                <Trigger Property="Orientation" Value="Horizontal">
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="Height" Value="42" />
+                    <Setter Property="Template"
+                        Value="{StaticResource HorizontalScrollBar}" />
+                </Trigger>
+                <Trigger Property="Orientation" Value="Vertical">
+                    <Setter Property="Width" Value="42"/>
+                    <Setter Property="Height" Value="Auto" />
+                    <Setter Property="Template"
+                        Value="{StaticResource VerticalScrollBar}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <!--双向-->
+        <Style x:Key="FavsScrollViewer" TargetType="{x:Type ScrollViewer}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <ScrollContentPresenter Grid.Column="1"/>
+                            <ScrollBar x:Name="PART_HorizontalScrollBar"
+            Orientation="Horizontal"
+            Grid.Row="1"
+            Grid.Column="1"
+            Value="{TemplateBinding HorizontalOffset}"
+            Maximum="{TemplateBinding ScrollableWidth}"
+            ViewportSize="{TemplateBinding ViewportWidth}"
+            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                            <ScrollBar Name="PART_VerticalScrollBar"
+                                       Grid.Row="0"
+            Grid.Column="1"
+            Value="{TemplateBinding VerticalOffset}"
+            Maximum="{TemplateBinding ScrollableHeight}"
+            ViewportSize="{TemplateBinding ViewportHeight}"
+            Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Margin="0,0,-0.5,0" HorizontalAlignment="Right" d:LayoutOverrides="Width"/>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--滚动条样式结束-->
+    </UserControl.Resources>
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="390" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <StackPanel VerticalAlignment="Center" Margin="20,0">
+                <TextBlock x:Name="评测记录" Foreground="#FF000000" FontSize="16" FontFamily="Microsoft YaHei" IsHyphenationEnabled="True"  TextAlignment="Left" TextWrapping="Wrap" Text="评测记录"/>
+            </StackPanel>
+
+            <Border BorderThickness="1" BorderBrush="#d9d9d9" Grid.Row="1" MaxHeight="6800" Height="Auto"  Width="330" Margin="10,1,10,10">
+                <Grid HorizontalAlignment="Left"  >
+                    <DataGrid Name="gvFit" Grid.Row="1"  Grid.Column="1" Style="{DynamicResource DataGridStyle}" ItemsSource="{Binding }" SelectionChanged="gvFit_SelectionChanged" >
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type ScrollBar}">
+                                <Setter Property="Template" Value="{StaticResource VerticalScrollBar}">
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="Orientation" Value="Horizontal">
+                                        <Setter Property="Width" Value="Auto"/>
+                                        <Setter Property="Height" Value="100" />
+                                    </Trigger>
+                                    <Trigger Property="Orientation" Value="Vertical">
+                                        <Setter Property="Width" Value="40"/>
+                                        <Setter Property="Height" Value="Auto" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.Resources>
+
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Width="80">
+                                <DataGridTemplateColumn.Header>
+                                    <CheckBox Content="全选" FontSize="18" Foreground="Black" IsChecked="True" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox FontSize="18" Width="25" HorizontalAlignment="Center" IsChecked="{Binding IsChecked,Mode=TwoWay}" Click="CheckBox_Click" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="编号"  IsReadOnly="True" Width="60" Binding="{Binding DayIndex}"/>
+                            <DataGridTextColumn Header="日期"  IsReadOnly="True" Width="165" Binding="{Binding DayTime}" ElementStyle="{StaticResource ContentCenterStyle}">
+                            </DataGridTextColumn>
+                            
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+            
+            <Grid Grid.Column="1"  Grid.Row="1" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="2" />
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="200"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Background="#cecece" >
+                    <CheckBox Content="仅显示均值" Height="36" HorizontalAlignment="Left" Margin="10,13,0,0" Name="cbAvg" Checked="cbAvg_Checked" Unchecked="cbAvg_Unchecked" Foreground="Black" />
+                    </StackPanel>
+                    <DataGrid Grid.Row="2" Name="gvInfo" Style="{DynamicResource DataGridStyle}" ItemsSource="{Binding }">
+                        <DataGrid.Columns>
+                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="评测模式" IsReadOnly="True" Width="125" Binding="{Binding ActionName}" />
+                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="爆发力" IsReadOnly="True" Width="95" Binding="{Binding MaxV}" />
+                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="耐力" IsReadOnly="True" Width="95" Binding="{Binding LastValue}" />
+                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="疲劳指数" IsReadOnly="True" Width="95" Binding="{Binding FatigueIndex}" />
+                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="评测时间" IsReadOnly="True" Width="155" Binding="{Binding EvaluteDetailDate}" />
+                        <DataGridTemplateColumn Header="操作" Width="90">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Command="{Binding Path=Edit}" Click="Button_Click" Tag="{Binding EvaluteDetailId}"  Style="{StaticResource ProButton}" Width="60" Height="20">删除</Button> 
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                    </DataGrid>
+ 
+                    <StackPanel Grid.Row="3" Name="spImage"></StackPanel>
+
+
+                </Grid>
+            </Grid>
+            <ComboBox Height="50" HorizontalAlignment="Left" Margin="173,5,0,0" Name="cbMode" VerticalAlignment="Top" Width="216" SelectionChanged="gvFit_SelectionChanged" Grid.Column="1" Grid.Row="1">
+                <ComboBoxItem Content="全部" Tag="0" />
+                <ComboBoxItem Content="前屈活动度测试" Tag="3" />
+                <ComboBoxItem Content="后伸活动度测试" Tag="4" />
+                <ComboBoxItem Content="旋转（左）活动度测试" Tag="1" />
+                <ComboBoxItem Content="旋转（右）活动度测试" Tag="2" />
+                <ComboBoxItem Content="前屈力量测试" Tag="7" />
+                <ComboBoxItem Content="后伸力量测试" Tag="8" />
+                <ComboBoxItem Content="旋转（左）力量测试" Tag="5" />
+                <ComboBoxItem Content="旋转（右）力量测试" Tag="6" />
+            </ComboBox>
+        </Grid>
+
+        <Grid  Background="#B0FFFFFF" Visibility="Collapsed" x:Name="SetVidicon"  Grid.RowSpan="2" Grid.ColumnSpan="2" Height="750" Width="1000" Panel.ZIndex="100" >
+            <Border CornerRadius="5" Height="40" x:Name="Loading"  BorderBrush="Black" BorderThickness="1" Background="White" Width="350" >
+                <Border.Effect>
+                    <DropShadowEffect Color="Black"></DropShadowEffect>
+                </Border.Effect>
+                <Grid Width="350" Height="35" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid>
+                        <Grid.Resources>
+                            <DrawingBrush x:Key="brush" Stretch="None" AlignmentX="Center" AlignmentY="Top">
+                                <DrawingBrush.Drawing>
+                                    <GeometryDrawing Brush="Black">
+                                        <GeometryDrawing.Geometry>
+                                            <EllipseGeometry RadiusX="2" RadiusY="5"/>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Grid.Resources>
+
+                        <Rectangle x:Name="r01" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="0"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="r02" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="30"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="r03" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="60"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="r04" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="90"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="r05" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="120"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="r06" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="150"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="r07" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="180"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="r08" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="210"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="r09" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="240"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="r10" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="270"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="r11" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="300"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="r12" Fill="{StaticResource brush}" Opacity="0.2" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <RotateTransform Angle="330"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+
+                        <Grid.Triggers>
+                            <EventTrigger RoutedEvent="Grid.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimation Storyboard.TargetName="r01" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.00000" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="r02" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.08333" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="r03" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.16666" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="r04" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.24999" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="r05" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.33332" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="r06" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.41665" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="r07" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.49998" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="r08" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.58331" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="r09" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.66664" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="r10" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.74997" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="r11" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.83330" To="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="r12" Storyboard.TargetProperty="Opacity" AutoReverse="True" Duration="0:0:0.08333" BeginTime="0:0:0.91663" To="0"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Grid.Triggers>
+
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <TextBlock Name="tbPrompt" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0,7">设备homing...</TextBlock>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+
+        
+        <Button Grid.Row="1" Content="保存处方" Name="btnSave" Style="{StaticResource ProButton}" Width="132" Height="62" Margin="354,0,514,0" Click="btnSave_Click" />
+        <Button Grid.Row="1" Content="导出Excel" Name="btnExcel" Style="{StaticResource ProButton}" Width="132" Height="62" Margin="501,0,367,0" Click="btnExcel_Click" />
+        <Button Grid.Row="1" Content="打印预览" Name="btnPrint"  Style="{StaticResource ProButton}" Width="132" Height="62" Margin="583,0,155,0" Click="btnPrint_Click" />
+        <Button Grid.Row="1" Content="返  回" Name="btnCancel"  Style="{StaticResource ProButton}" Width="132" Height="62" Margin="729,0,9,0" Click="btnCancel_Click"  />
+    </Grid>
+</UserControl>

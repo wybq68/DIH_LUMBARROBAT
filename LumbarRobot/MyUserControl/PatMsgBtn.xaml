@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="LumbarRobot.MyUserControl.PatMsgBtn"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"     
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             mc:Ignorable="d" 
+             d:DesignHeight="31">
+
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+            <TextBlock x:Name="lblP" Margin="0,2,0,0" Foreground="#8B8B8B" FontSize="18" FontFamily="Microsoft YaHei" IsHyphenationEnabled="True"  TextAlignment="Left" TextWrapping="Wrap" Text="当前患者" >
+            </TextBlock>
+            <Image Source="/images/border.png" Width="2" Height="18" Margin="8,5"></Image>
+            <TextBlock x:Name="lblPatient" Margin="0,2,0,0" Foreground="#000000" IsEnabled="{Binding IsEnabked,Mode=TwoWay}" FontSize="18" FontFamily="Microsoft YaHei" IsHyphenationEnabled="True"  TextAlignment="Left" TextWrapping="Wrap"   Cursor="Hand" MouseLeftButtonDown="lblPatient_MouseLeftButtonDown">
+                
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

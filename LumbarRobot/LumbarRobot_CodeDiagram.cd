@@ -1,0 +1,1002 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LumbarRobot.ActionControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gKAIHgAJtMIkARRgAAUBiFRQEIAIWBBKMRACMLCZAAI=</HashCode>
+      <FileName>ActionControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.AddPatient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAgAAAEQAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>AddPatient.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.AlarmDialog_New" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAADEAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AlarmDialog_New.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LumbarRobot.App" Collapsed="true">
+    <Position X="21" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAQAAAAAAAAAACAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.CustomChars" Collapsed="true">
+    <Position X="12.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgBEAIADCABAgQAAAAAgAEAoAAAAAAAAAOCCgAAABAg=</HashCode>
+      <FileName>CustomChars.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.EditPrescriptionView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAEAAAAAAAAAAAAABAAAAAEAAAgAAAAACAAAA=</HashCode>
+      <FileName>EditPrescriptionView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.FitActionControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gqAIFiCJvIIkARQgAgUAAFBQECAIABADMVAAoKDYAYY=</HashCode>
+      <FileName>FitActionControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.FitResultControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KQEEAIIdAgMEEAAAEAABBEMIAgEAAFBAQGAACACAiAA=</HashCode>
+      <FileName>FitResultControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.GameView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACBAAAAAAAEAAAgAFAAAAQAAAAABkCAACACAA=</HashCode>
+      <FileName>GameView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.GameWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="System.Windows.Window" FixedFromPoint="true">
+      <Path>
+        <Point X="32.5" Y="5.75" />
+        <Point X="32.5" Y="5.095" />
+        <Point X="18.25" Y="5.095" />
+        <Point X="18.25" Y="4.941" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IgAAAAAAAAgAAAgAABEAgIkAQAQSAQAAAAkCAAABCAA=</HashCode>
+      <FileName>GameWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.GamePram" Collapsed="true">
+    <Position X="14" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAQAAAAAAAAAAAAAAAQAAAAABIAgAQEAAAA=</HashCode>
+      <FileName>GameWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Login" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="5.25" Width="1.5" />
+    <InheritanceLine Type="System.Windows.Window" FixedFromPoint="true">
+      <Path>
+        <Point X="31.75" Y="6.125" />
+        <Point X="22.623" Y="6.125" />
+        <Point X="22.623" Y="5.596" />
+        <Point X="22.5" Y="5.596" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAgYIDAIAABgAAAQIAFgAAAAAkBCCAQAAAAAAAAA=</HashCode>
+      <FileName>Login.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.LongTimeTaskAbc" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAACIAAAAAAA=</HashCode>
+      <FileName>LongTimeTaskAbc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YJCgAIAYFwKAtGUKUb0AJAgDAA4AtBRCSAkEALQBRiA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ReportPrintControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAACAAAAAACAAAA=</HashCode>
+      <FileName>ReportPrintControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.SaveCourseView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAIACBAAAAAAABCAEAA=</HashCode>
+      <FileName>SaveCourseView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.SavePrescriptionView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAEAEAAAAGAAAAAABAEBAAAAAABAgIAAAACAAgA=</HashCode>
+      <FileName>SavePrescriptionView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ShowFitChartView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAQAIBAAAAABAAABOCAAEgAAAAAAABACAABA=</HashCode>
+      <FileName>ShowFitChartView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ShowReportDetailView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBAAAAAAAAAACAAAAAAgBgBAAAQAhEAAgAAgAATAIJA=</HashCode>
+      <FileName>ShowReportDetailView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.WaitingDlg" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAIAAgAAAAAAAABAAAAgAAAAAAAAgAAAAAAAQAAA=</HashCode>
+      <FileName>WaitingDlg.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.Window1" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAQQAACICJAAAABIACAAAAAAEAwDEIwHQPAAEQRAg=</HashCode>
+      <FileName>Window1.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.Window2" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Window2.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ActionUserControl.Charsline" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAKWhhEAAAABAIBAIGkQ0TA2AAhgCAQICKgiBBEigA=</HashCode>
+      <FileName>ActionUserControl\Charsline.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ActionUserControl.Eilelc2" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ESAUIAUAAgQIEiIgiBEE4IRAACKBQQQEAEAQAAFB4Ag=</HashCode>
+      <FileName>ActionUserControl\Eilelc2.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ActionUserControl.LineChar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IADUAgBACAAAAQAAAAAgAEAqgAAAAAAAAMKCgBAAAAA=</HashCode>
+      <FileName>ActionUserControl\LineChar.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ActionUserControl.SinWpf" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAEIAAAAAABBAACAIkAABAAAIAAAAAAAoAABhBgAA=</HashCode>
+      <FileName>ActionUserControl\SinWpf.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ActionUserControl.TimeSina" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAKWhhEAAAABAIBAIGkQ0TA2AAhgCAQICKgiBBEigA=</HashCode>
+      <FileName>ActionUserControl\TimeSina.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ActionUserControl.UserLine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAEACQgAQAAgAAAAAAAASAAAAAAAAAAkAA=</HashCode>
+      <FileName>ActionUserControl\UserLine.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ActionUserControl.UserShowLine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAEBAAAAAAAAIBAAEkQAAAQACgAAAAACAAABAAiAA=</HashCode>
+      <FileName>ActionUserControl\UserShowLine.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ActionUserControl.wpfclire" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAAIAEAAgQAAiAggAEEQIBAACKBQQQEAEAAAAAB4Ag=</HashCode>
+      <FileName>ActionUserControl\wpfclire.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ChartNodes.ChartNodesControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BcYQAEIEASAIBAoBASJAAgCMAYAExIIAsgAQBOCAXAI=</HashCode>
+      <FileName>ChartNodes\ChartNodesControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.ChartNodes.RecordData" Collapsed="true">
+    <Position X="17.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAQAEAAEAABAAAAAQAA=</HashCode>
+      <FileName>ChartNodes\ChartNodesControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Commands.ExportToPngCommand" Collapsed="true">
+    <Position X="29.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAABAQA=</HashCode>
+      <FileName>Commands\ExportToPngCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Commands.PrintCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\PrintCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.Commands.PwdLostFoucus" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\PwdLostFoucus.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.Commands.WhereStrCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\WhereStrCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.Common.ExcelHelper" Collapsed="true">
+    <Position X="24.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACQABAEAiAAEwgAABAAAACgAAAEBAAglIAAAAA=</HashCode>
+      <FileName>Common\ExcelHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.FontsClearup" Collapsed="true">
+    <Position X="28" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAEAAAAABAAAIAAAiAAAAAAAQAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Common\FontsClearup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.FontInfo" Collapsed="true">
+    <Position X="26.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAQAIAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Common\FontsClearup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.GetPort" Collapsed="true">
+    <Position X="26.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Common\GetPort.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.ImgSourceConvert" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ImgSourceConvert.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.Common.MyChart" Collapsed="true">
+    <Position X="28" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Common\MyChart .cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.Objtoobj" Collapsed="true">
+    <Position X="15.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAKAAIAEAAGAAAAAgIAAAAAAACIAQAgQQAABAAA=</HashCode>
+      <FileName>Common\Objtoobj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.Parameter" Collapsed="true">
+    <Position X="19.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Parameter.cs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.PasswordBoxBindingHelper" Collapsed="true">
+    <Position X="21" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAgAAAAAAAAARgAAAAAAEIgAAgAAqCAAAAAAAA=</HashCode>
+      <FileName>Common\PasswordBoxBindingHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.PrinterOffline" Collapsed="true">
+    <Position X="12.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAQACAAEAAAAIAAAAAAAAABAAAAAAACAAAAg=</HashCode>
+      <FileName>Common\PrinterOffline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.PrintOutputInfo" Collapsed="true">
+    <Position X="14" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABmIAsYANAEAIIAAqhAAAAAIiEZAECAAEIAADACAAA=</HashCode>
+      <FileName>Common\PrintOutputInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.ReportCalibrationDataProp" Collapsed="true">
+    <Position X="3.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEQAAAAAAIAAAAAAAACAAAEIAAAAAAIAAQAAAAAA=</HashCode>
+      <FileName>Common\ReportCalibrationDataProp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.ReportData" Collapsed="true">
+    <Position X="21" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAoAAEAAAAAECAAAAAAAAAAAAAAAAAABAAAIAAABA=</HashCode>
+      <FileName>Common\ReportData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.ReportPropInfo" Collapsed="true">
+    <Position X="3.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAARANABQEJkBYAAUAAiAAAQgIIAAQMAwAIAoAYEA=</HashCode>
+      <FileName>Common\ReportPropInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Common.ReportTextControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQBAABAAAAEAAAAAAAAAAAAAAABAAAAAAgAAAAA=</HashCode>
+      <FileName>Common\ReportTextControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.Common.ViewModelBase" Collapsed="true">
+    <Position X="5.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACAAAEAQAAAAAAABgAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Common\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LumbarRobot.Event.IsRefreshEvent" Collapsed="true">
+    <Position X="14" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAg=</HashCode>
+      <FileName>Event\IsRefreshEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Event.SaveCourseEvent" Collapsed="true">
+    <Position X="17.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAg=</HashCode>
+      <FileName>Event\SaveCourseEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Event.SelectPatientEvent" Collapsed="true">
+    <Position X="24.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAg=</HashCode>
+      <FileName>Event\SelectPatientEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportItem" Collapsed="true">
+    <Position X="24.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAMIAAAAAAQAyAAAAAAAAAAAAEAAAAAAAAABADA=</HashCode>
+      <FileName>FitResultControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo" Collapsed="true">
+    <Position X="15.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAEAAAAAAAAECAAAAAgAAAAAAA=</HashCode>
+      <FileName>FitResultControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Interactions.AlarmInfo" Collapsed="true">
+    <Position X="0.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBAQAAAAAAAAAAAAgAAAAIAAAAAEAAAACAIAIAgCACA=</HashCode>
+      <FileName>Interactions\AlarmInteractionAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Interactions.AlarmInteractionAction" Collapsed="true">
+    <Position X="6.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interactions\AlarmInteractionAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Interactions.AlarmInteractionDialog" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Interactions\AlarmInteractionDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Interactions.GenericInteractionAction&lt;T&gt;" Collapsed="true">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAAEAAAAAQ=</HashCode>
+      <FileName>Interactions\GenericInteractionAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Interactions.GenericInteractionDialogBase&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAACAAAAIBAACIAAA=</HashCode>
+      <FileName>Interactions\GenericInteractionDialogBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.IViewModel.GenericAdapter&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAREAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IViewModel\GenericAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.IViewModel.GenericViewModel&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAIAABEAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IViewModel\GenericViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.AlarmDialog" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\AlarmDialog.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.ChangeBtn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\ChangeBtn.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.PreStopArgs" Collapsed="true">
+    <Position X="28" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\ControlPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.ControlPanel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABSEAAAGkUAFAEIkAhAACBEFCyQQADQACAICECAIYEA=</HashCode>
+      <FileName>MyUserControl\ControlPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.DocMsgBtun" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\DocMsgBtun.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.ExitBtn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\ExitBtn.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.GameBtn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAAgCAAAAAAA=</HashCode>
+      <FileName>MyUserControl\GameBtn.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.HomeBtn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="28" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\HomeBtn.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.InitiativeBtn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\InitiativeBtn.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.LightBtn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\LightBtn.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.MyMessageBox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="System.Windows.Window" FixedFromPoint="true">
+      <Path>
+        <Point X="31.75" Y="6.188" />
+        <Point X="31.596" Y="6.188" />
+        <Point X="31.596" Y="6.096" />
+        <Point X="13" Y="6.096" />
+        <Point X="13" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAMAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\MyMessageBox.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.MyMessageBox_Login" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="System.Windows.Window" FixedFromPoint="true">
+      <Path>
+        <Point X="31.75" Y="6.125" />
+        <Point X="15.623" Y="6.125" />
+        <Point X="15.623" Y="6.596" />
+        <Point X="15.5" Y="6.596" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAMAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\MyMessageBox_Login.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.Pager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASQAAAADAYgAAIQAkACABIAAAAAggAISABAEAQAAAA=</HashCode>
+      <FileName>MyUserControl\Pager.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.PatMsgBtn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAABAAAAAAAAAAAAACAAAAAACA=</HashCode>
+      <FileName>MyUserControl\PatMsgBtn.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.ReturnBtn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\ReturnBtn.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.SearchPatient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCIEAAAAAACAIMAAARABAAoAAAAAAAAIAAgAAAAAEA=</HashCode>
+      <FileName>MyUserControl\SearchPatient.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.SetControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAwIABAGMAAUAggIAAEQAAgAAAEIYsACIAEgBQgBAAA=</HashCode>
+      <FileName>MyUserControl\SetControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.ShutDownBtn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\ShutDownBtn.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.SlideLocationl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECQAAAAAAAAAgAAAABAAQADAAAAAMACAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\SlideLocationl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.StopBtn" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\StopBtn.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.TrainRecordDialog" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAABAAAAAAAAAAAAAAAAAEAAAAAAAAAACABAA=</HashCode>
+      <FileName>MyUserControl\TrainRecordDialog.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.RecordData" Collapsed="true">
+    <Position X="19.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAQAEAAEAABAAAAAQAA=</HashCode>
+      <FileName>MyUserControl\TrainRecordDialog.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.MyUserControl.WPFMessageBox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAIAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\WPFMessageBox.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.Properties.Resources" Collapsed="true">
+    <Position X="12.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Properties.Settings" Collapsed="true">
+    <Position X="29.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Requests.GenericInteractionRequest&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Requests\GenericInteractionRequest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LumbarRobot.Requests.GenericInteractionRequestEventArgs&lt;T&gt;" Collapsed="true">
+    <Position X="22.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAACAQAA=</HashCode>
+      <FileName>Requests\GenericInteractionRequestEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.Resources.SettingButton" Collapsed="true">
+    <Position X="28" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\SettingButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.ActionControlDialog" Collapsed="true">
+    <Position X="14" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\ActionControlDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.AddPatientDialog" Collapsed="true">
+    <Position X="17.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\AddPatientDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.ChartNodesDialog" Collapsed="true">
+    <Position X="28" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\ChartNodesDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.ItemDemo" Collapsed="true">
+    <Position X="15.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiiAAAIIggAAAgBgFAAUAREQAAAAIIBAAEgAAIAAA=</HashCode>
+      <FileName>ViewModels\DemoClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.DayDemo" Collapsed="true">
+    <Position X="14" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAACAAAAAAAACAAAAAAAAgAAAAAAAAIAAAAA=</HashCode>
+      <FileName>ViewModels\DemoClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.ModeDemo" Collapsed="true">
+    <Position X="26.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAgAAAAIAAAAAAAAAQAAAAEAAAAAAAAAABA=</HashCode>
+      <FileName>ViewModels\DemoClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.ExItemDemo" Collapsed="true">
+    <Position X="28" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAABgA=</HashCode>
+      <FileName>ViewModels\DemoClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.FitResultX" Collapsed="true">
+    <Position X="24.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAAAAAAACgAAAAAAAACAAAAAAAgAAAAQAIAIAAABA=</HashCode>
+      <FileName>ViewModels\DemoClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.FitResultQ" Collapsed="true">
+    <Position X="22.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAACgAAgAAAAAAAAAAAAAgAAAAAAgAKAAABA=</HashCode>
+      <FileName>ViewModels\DemoClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.MyFitResult" Collapsed="true">
+    <Position X="29.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoAAIACAAQDiAAgAAAAACAAQAAAAgAAAAQAoAKAAABA=</HashCode>
+      <FileName>ViewModels\DemoClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.FitResultCount" Collapsed="true">
+    <Position X="17.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAAAAgAAIAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\DemoClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.FitResultDemo" Collapsed="true">
+    <Position X="19.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkEAAQAAAAAAIQAAAAAAAAAEEABAAAAAAEACgAAAA=</HashCode>
+      <FileName>ViewModels\DemoClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.FitDemo" Collapsed="true">
+    <Position X="14" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAIAAAACCAAAAAAAAAAAAAAAAAgAAAAAAAAIAAAAA=</HashCode>
+      <FileName>ViewModels\DemoClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.EditPrescriptionDialog" Collapsed="true">
+    <Position X="19.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\EditPrescriptionDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.FitResultDialog" Collapsed="true">
+    <Position X="21" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\FitResultDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.GameDialog" Collapsed="true">
+    <Position X="12.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\GameDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.LoginViewModel" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAgBAAAAAAQAAgAAAAQAAAAAQAAAAgA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.PrescriptionDialog" Collapsed="true">
+    <Position X="24.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\PrescriptionDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.PrescriptionItem" Collapsed="true">
+    <Position X="26.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiiAAAAAggAAAABAFCAkAREQAAIAoABAAEAAAAABA=</HashCode>
+      <FileName>ViewModels\PrescriptionItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.PrintTest" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQgEgCFIAAgAEATEyABKKMCSDIAAUAAAAMgCDABAQA=</HashCode>
+      <FileName>ViewModels\PrintTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.ReportDialog" Collapsed="true">
+    <Position X="22.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\ReportDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.ReportPrintDialog" Collapsed="true">
+    <Position X="28" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\ReportPrintDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.ReportPrintViewModel" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEgABAAAgAAADAQABAAECQBIAAUAAAAIAABAAAAA=</HashCode>
+      <FileName>ViewModels\ReportPrintViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.SaveCourseDialog" Collapsed="true">
+    <Position X="15.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\SaveCourseDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.SearchPatientViewModel" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IwCCACMQQgAABECAAAwIAgSAAAIAgAQAABACUAAQIBA=</HashCode>
+      <FileName>ViewModels\SearchPatientViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.ShowFitChartDialog" Collapsed="true">
+    <Position X="12.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\ShowFitChartDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.ShowReportDetailDialog" Collapsed="true">
+    <Position X="15.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\ShowReportDetailDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ViewModels.TrainDialog" Collapsed="true">
+    <Position X="28" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAAAAAAAAAAQAAAAAAEAAAAAAIAAACAAAA=</HashCode>
+      <FileName>ViewModels\TrainDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Window" Collapsed="true">
+    <Position X="31.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="LumbarRobot.ILongTimeTask" Collapsed="true">
+    <Position X="15.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ILongTimeTask.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LumbarRobot.IView.IGenericInteractionView&lt;T&gt;" Collapsed="true">
+    <Position X="3.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IView\IGenericInteractionView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LumbarRobot.IViewModel.IGenericAdapter&lt;T&gt;" Collapsed="true">
+    <Position X="12.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IViewModel\IGenericAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LumbarRobot.IViewModel.IGenericViewModel&lt;T&gt;" Collapsed="true">
+    <Position X="3.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IViewModel\IGenericViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="LumbarRobot.Requests.IGenericInteractionRequest&lt;T&gt;" Collapsed="true">
+    <Position X="14" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Requests\IGenericInteractionRequest.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="LumbarRobot.FitType" Collapsed="true">
+    <Position X="12.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAQBAAAAIAAAAAAEAAAA=</HashCode>
+      <FileName>ActionControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LumbarRobot.Interactions.InteractionType" Collapsed="true">
+    <Position X="14" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Interactions\GenericInteractionDialogBase.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="LumbarRobot.TaskEndNotify" Collapsed="true">
+    <Position X="14" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WaitingDlg.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.MyUserControl.PreStopHandler" Collapsed="true">
+    <Position X="12.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyUserControl\ControlPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

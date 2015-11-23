@@ -1,0 +1,1344 @@
+﻿<Window x:Class="LumbarRobot.MainWindow"
+         xmlns:my="clr-namespace:LumbarRobot.MyUserControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:interactionRequest="clr-namespace:LumbarRobot.Common"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        mc:Ignorable="d" 
+        Title="MainWindow" Height="768" Width="1366" WindowStyle="None" Top="0" Left="0" AllowsTransparency="True" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <interactionRequest:ImgSourceConvert x:Key="imgcov"></interactionRequest:ImgSourceConvert>
+        <!--项目按钮-->
+        <Style x:Key="ProButton" TargetType="Button">
+            <Setter Property="Foreground" Value="white"/>
+            <!--修改模板属性-->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <!--控件模板-->
+                    <ControlTemplate TargetType="Button">
+                        <!--背景色-->
+                        <Border x:Name="back" Opacity="0.8" CornerRadius="3">
+                            <Border.BitmapEffect>
+                                <OuterGlowBitmapEffect Opacity="0.7" GlowSize="0" GlowColor="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Button.Background).(SolidColorBrush.Color)}"/>
+                            </Border.BitmapEffect>
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1.5">
+                                    <GradientBrush.GradientStops>
+                                        <GradientStopCollection>
+                                            <GradientStop Color="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Button.Background).(SolidColorBrush.Color)}" Offset="0.4"/>
+                                        </GradientStopCollection>
+                                    </GradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <!--前景色及边框-->
+                            <Border x:Name="fore" BorderThickness="1" CornerRadius="3" BorderBrush="#333333">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="#333333" Offset="0.5"/>
+                                            </GradientStopCollection>
+                                        </GradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <!--按钮内容-->
+                                <Border>
+                                    <TextBlock x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding  Content}" FontFamily="黑体" FontSize="16" Foreground="White" FontStretch="UltraExpanded">
+                                    </TextBlock>
+                                </Border>
+                            </Border>
+                        </Border>
+                        <!--触发器-->
+                        <ControlTemplate.Triggers>
+                            <!--鼠标移入移出-->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="6" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation To="#99cc00" BeginTime="0:0:0.2" Duration="0:0:0.2" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <!--按钮按下弹起-->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="3" Duration="0:0:0.1" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation To="#99cc00" Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <!--按钮失效-->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="#333333"/>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="0" Duration="0:0:0.3" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation To="#333333" Duration="0:0:0.3" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"/>
+                                            <ColorAnimation To="#333333" Duration="0:0:0.3" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Opacity)"/>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Opacity)"/>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Direction)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Color)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--img 背景色显示效果-->
+        <Style TargetType="ListBoxItem">
+            <Style.Resources>
+                <!--SelectedItem with focus-->
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#eeeeee" Opacity="0"/>
+                <!--SelectedItem without focus-->
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#eeeeee" Opacity="0"/>
+            </Style.Resources>
+        </Style>
+
+
+        <!--文本样式1-->
+        <Style x:Key="ContentCenterStyle"
+               TargetType="{x:Type TextBlock}">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <!--DataGrid样式开始-->
+        <Style x:Key="DataGridStyle" TargetType="DataGrid">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="#FFFFFF" />
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="ColumnHeaderHeight" Value="33"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="CanUserReorderColumns" Value="False"/>
+            <Setter Property="CanUserResizeColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Foreground" Value="#333333"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontFamily" Value="Microsoft YaHei"/>
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                #cccccc
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="BorderBrush" Value="#d6d6d6"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <!--最小宽度-->
+                        <Setter Property="MinWidth" Value="60"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="RowStyle" >
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="Height" Value="40"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="Foreground" Value="#666666"/>
+                        <Setter Property="Background" Value="#FFFFFF" />
+                        <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+                        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="CellStyle" >
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Setter Property="BorderBrush" Value="#d6d6d6"/>
+                        <Setter Property="BorderThickness" Value="1,0,1,2" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True" >
+                                <Setter Property="Background" Value="#669900" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="RowHeaderWidth" Value="0"/>
+        </Style>
+        <!--DataGrid样式结束-->
+
+        <!--滚动条样式开始-->
+        <SolidColorBrush x:Key="HorizontalNormalBorderBrush" Color="#efefef" />
+        <SolidColorBrush x:Key="NormalBorderBrush" Color="#efefef" />
+        <SolidColorBrush x:Key="GlyphBrush" Color="#444" />
+
+
+        <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border Background="#efefef" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--ScrollBarLineButtonTop-->
+        <Style x:Key="ScrollBarLineButtonTop" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border
+          x:Name="Border"
+          Margin="1"
+          CornerRadius="2"
+          
+          BorderBrush="{StaticResource NormalBorderBrush}"
+          BorderThickness="0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/images/up.png"></ImageBrush>
+                            </Border.Background>
+                            <Path
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Fill="{StaticResource GlyphBrush}"
+            Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--ScrollBarLineButtonBot-->
+        <Style x:Key="ScrollBarLineButtonBot" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border
+          x:Name="Border"
+          Margin="1"
+          CornerRadius="2"
+          
+          BorderBrush="{StaticResource NormalBorderBrush}"
+          BorderThickness="0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/images/down.png"></ImageBrush>
+                            </Border.Background>
+                            <Path
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Fill="{StaticResource GlyphBrush}"
+            Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--ScrollBarLineButtonLeft-->
+        <Style x:Key="ScrollBarLineButtonLeft" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border
+          x:Name="Border"
+          Margin="1"
+          CornerRadius="2"
+          Width="35"
+          BorderBrush="{StaticResource NormalBorderBrush}"
+          BorderThickness="0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/images/left.png"></ImageBrush>
+                            </Border.Background>
+                            <Path
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Fill="{StaticResource GlyphBrush}"
+            Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--ScrollBarLineButtonRight-->
+        <Style x:Key="ScrollBarLineButtonRight" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border
+          x:Name="Border"
+          Margin="1"
+          CornerRadius="2"
+                            Width="42"
+          
+          BorderBrush="{StaticResource NormalBorderBrush}"
+          BorderThickness="0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/images/right.png"></ImageBrush>
+                            </Border.Background>
+                            <Path
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Fill="{StaticResource GlyphBrush}"
+            Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Width" Value="38"/>
+            <Setter Property="Height" Value="Auto"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border>
+                            <Grid>
+                                <Border>
+                                    <Border.Background>
+                                        <!--头部图片-->
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Color="Gray" Offset="0.7"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--垂直-->
+        <ControlTemplate x:Key="VerticalScrollBar"
+            TargetType="{x:Type ScrollBar}">
+
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition MaxHeight="23"/>
+                    <RowDefinition />
+                    <RowDefinition MaxHeight="23"/>
+                </Grid.RowDefinitions>
+                <Border
+      Grid.RowSpan="3"
+      Grid.Row="0"
+      CornerRadius="0"
+      Background="Transparent" />
+                <RepeatButton
+            		Grid.Row="0"
+            		Style="{StaticResource ScrollBarLineButtonTop}"
+            		Height="23"
+            		Command="ScrollBar.LineUpCommand" VerticalAlignment="Top"
+      d:LayoutOverrides="Height"
+      />
+
+                <Track
+      Name="PART_Track"
+      Grid.Row="1"
+      IsDirectionReversed="true" >
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton Width="38"
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageUpCommand" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb
+                          Style="{StaticResource ScrollBarThumb}"  BorderBrush="{StaticResource HorizontalNormalBorderBrush}">
+                        </Thumb>
+                    </Track.Thumb>
+
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton Width="38"
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageDownCommand" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+                <RepeatButton
+            		Grid.Row="2"
+            		Style="{StaticResource ScrollBarLineButtonBot}"
+            		Height="23"
+            		Command="ScrollBar.LineDownCommand" d:LayoutOverrides="Height, GridBox" VerticalAlignment="Bottom"
+      />
+            </Grid>
+        </ControlTemplate>
+        <!--水平-->
+        <ControlTemplate x:Key="HorizontalScrollBar"
+            TargetType="{x:Type ScrollBar}">
+            <Grid Height="35" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="35"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition MaxWidth="35"/>
+                </Grid.ColumnDefinitions>
+                <Border
+      Grid.ColumnSpan="3"
+      CornerRadius="0"
+      Background="#efefef" />
+                <RepeatButton
+      Grid.Column="0"
+      Style="{StaticResource ScrollBarLineButtonLeft}"
+      Width="23"
+      Height="35"
+      Command="ScrollBar.LineLeftCommand"
+       />
+                <Track
+      x:Name="PART_Track"
+      Grid.Column="1"
+      IsDirectionReversed="False">
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageLeftCommand" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb
+          Style="{StaticResource ScrollBarThumb}"
+          Margin="0,1,0,1"
+          BorderBrush="{StaticResource NormalBorderBrush}">
+
+                            <Thumb.Background>
+                                <ImageBrush ImageSource="/images/bar1.png"  />
+                            </Thumb.Background>
+
+                        </Thumb>
+                    </Track.Thumb>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageRightCommand" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+                <RepeatButton
+      Grid.Column="3"
+      Style="{StaticResource ScrollBarLineButtonRight}"
+      Width="35"
+                    Height="35"
+      Command="ScrollBar.LineRightCommand"
+      />
+            </Grid>
+        </ControlTemplate>
+        <!--双向Bar-->
+        <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Style.Triggers>
+                <Trigger Property="Orientation" Value="Horizontal">
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="Height" Value="42" />
+                    <Setter Property="Template"
+                        Value="{StaticResource HorizontalScrollBar}" />
+                </Trigger>
+                <Trigger Property="Orientation" Value="Vertical">
+                    <Setter Property="Width" Value="42"/>
+                    <Setter Property="Height" Value="Auto" />
+                    <Setter Property="Template"
+                        Value="{StaticResource VerticalScrollBar}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <!--双向-->
+        <Style x:Key="FavsScrollViewer" TargetType="{x:Type ScrollViewer}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <ScrollContentPresenter Grid.Column="1"/>
+                            <ScrollBar x:Name="PART_HorizontalScrollBar"
+            Orientation="Horizontal"
+            Grid.Row="1"
+            Grid.Column="1"
+            Value="{TemplateBinding HorizontalOffset}"
+            Maximum="{TemplateBinding ScrollableWidth}"
+            ViewportSize="{TemplateBinding ViewportWidth}"
+            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                            <ScrollBar Name="PART_VerticalScrollBar"
+                                       Grid.Row="0"
+            Grid.Column="1"
+            Value="{TemplateBinding VerticalOffset}"
+            Maximum="{TemplateBinding ScrollableHeight}"
+            ViewportSize="{TemplateBinding ViewportHeight}"
+            Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Margin="0,0,-0.5,0" HorizontalAlignment="Right" d:LayoutOverrides="Width"/>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--滚动条样式结束-->
+
+
+        <Style x:Key="TabItem1" TargetType="{x:Type TabItem}">
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+
+                        <Grid VerticalAlignment="Center">
+                            <Image x:Name="imageNoChecked" Source="/images/subnav_03.png"  Height="73" Width="114"    />
+                            <Image x:Name="imageChecked" Source="/images/subnavClick_03.png" Height="73" Width="114"  />
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="imageChecked" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="imageNoChecked" Property="Visibility" Value="Hidden" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="imageChecked" Property="Visibility" Value="Hidden" />
+                                <Setter TargetName="imageNoChecked" Property="Visibility" Value="Visible" />
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+        <Style x:Key="TabItem2" TargetType="{x:Type TabItem}">
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid VerticalAlignment="Center">
+                            <Image x:Name="imageNoChecked" Source="/images/subnav_04.png"  Height="73" Width="114"   />
+                            <Image x:Name="imageChecked" Source="/images/subnavClick_04.png" Height="73" Width="114"  />
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="imageChecked" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="imageNoChecked" Property="Visibility" Value="Hidden" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="imageChecked" Property="Visibility" Value="Hidden" />
+                                <Setter TargetName="imageNoChecked" Property="Visibility" Value="Visible" />
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+        <Style x:Key="TabItem3" TargetType="{x:Type TabItem}">
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+
+                        <Grid VerticalAlignment="Center">
+                            <Image x:Name="imageNoChecked" Source="/images/subnav_05.png"  Height="73" Width="114"   />
+                            <Image x:Name="imageChecked" Source="/images/subnavClick_05.png" Height="73" Width="114"  />
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="imageChecked" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="imageNoChecked" Property="Visibility" Value="Hidden" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="imageChecked" Property="Visibility" Value="Hidden" />
+                                <Setter TargetName="imageNoChecked" Property="Visibility" Value="Visible" />
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+        <Style x:Key="TabItem4" TargetType="{x:Type TabItem}">
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+
+                        <Grid VerticalAlignment="Center">
+                            <Image x:Name="imageNoChecked" Source="/images/subnav_06.png"  Height="55" Width="89"   />
+                            <Image x:Name="imageChecked" Source="/images/subnavClick_06.png" Height="55" Width="89"  />
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="imageChecked" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="imageNoChecked" Property="Visibility" Value="Hidden" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="imageChecked" Property="Visibility" Value="Hidden" />
+                                <Setter TargetName="imageNoChecked" Property="Visibility" Value="Visible" />
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="#cecece">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="82"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="273"></ColumnDefinition>
+            <ColumnDefinition Width="374"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Border Background="#d9d9d9" BorderThickness="0,0,0,1"  BorderBrush="#b3b3b3" Grid.ColumnSpan="3" >
+            <Grid Width="auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="500"  />
+                    <ColumnDefinition  />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                    <my:LightBtn x:Name="Light"  Margin="42,0,0,0" HorizontalAlignment="Left"/>
+                    <my:DocMsgBtun Margin="32,2,0,0"   HorizontalAlignment="Left"/>
+                    <my:PatMsgBtn  Margin="56,2,0,0"   HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
+                    <my:GameBtn  Height="71" Width="76" Margin="8,0" />
+                    <my:InitiativeBtn  Height="71" Width="76" Margin="8,0" />
+                    <my:StopBtn  Height="71" Width="76" Margin="8,0" />
+                    <my:ChangeBtn  Height="71" Width="76" Margin="8,0" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="3">
+            <my:SearchPatient Height="680" Width="273" x:Name="patientInfos" />
+        </Border>
+
+        <!--训练记录开始-->
+        <Border Grid.Row="3" Grid.Column="1" Background="White">
+            <TabControl Background="#cccccc" Name="tabChoose" Width="360"  SelectionChanged="tabChoose_SelectionChanged"  BorderThickness="0" BorderBrush="#cccccc" >
+                <TabItem Name="tabLiaoCheng" Width="118" Height="73" Style="{DynamicResource TabItem1}" >
+                    <TabItem.Background>
+                        <ImageBrush ImageSource="/images/subnav_03.png"></ImageBrush>
+                    </TabItem.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="100" />
+                        </Grid.RowDefinitions>
+                        <Grid Background="#cccccc">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="46"/>
+                            </Grid.RowDefinitions>
+                            <Grid Margin="0,0,0,3" Grid.RowSpan="2">
+                                <ListBox Name="CourseListBox" Width="357" Background="Blue" SelectionChanged="CourseListBox_SelectionChanged" ItemsSource="{Binding }" SelectedIndex="{Binding SlectCourseIndex,Mode=TwoWay}" Margin="8,3,8,-3" SelectionMode="Single">
+                                    <ListBox.Template>
+                                        <ControlTemplate TargetType="{x:Type ListBox}">
+                                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                                <WrapPanel Orientation="Horizontal" IsItemsHost="True" ScrollViewer.CanContentScroll="True"/>
+                                            </ScrollViewer>
+                                        </ControlTemplate>
+                                    </ListBox.Template>
+
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Vertical" Height="92" Width="105" Margin="2">
+                                                <Image Name="currseImg" Source="/images/notepad.png.png"  Cursor="Hand"  Height="92" Width="105" >
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="False">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+
+                                                <Image Source="/images/notepad.png" Cursor="Hand"  Height="92" Width="105" >
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+
+                                                <TextBlock  Foreground="#999999" FontSize="12"   FontFamily="Microsoft YaHei" IsHyphenationEnabled="True" Padding="10,0"  TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=PrescriptionName}" Margin="0,-20,0,0" Width="105" >
+                                                         <TextBlock.Style>
+                                                            <Style TargetType="TextBlock">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="False">
+                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                                </TextBlock>
+
+                                                <TextBlock  Foreground="#FFFFFF" FontSize="12"   FontFamily="Microsoft YaHei" IsHyphenationEnabled="True" Padding="10,0"  TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=PrescriptionName}" Margin="0,-20,0,0" Width="105" >
+                                                          <TextBlock.Style>
+                                                            <Style TargetType="TextBlock">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="True">
+                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                                </TextBlock>
+
+                                                <TextBox FontSize="12"  Text="{Binding Path=PrescriptionId}" Visibility="Hidden" Width="1"></TextBox>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Button Content="选择" Height="66" Name="btnSelectAction"  Style="{DynamicResource ProButton}" Width="126" Click="btnSelectAction_Click" />
+                            <Button Content="删除" Height="66" Name="btnDelAction" Grid.Column="1" Style="{DynamicResource ProButton}" Width="126" Click="btnDelAction_Click"  />
+                        </Grid>
+                              
+                      
+                    </Grid>
+                    
+                </TabItem>
+                <TabItem Name="tabReport" Width="118" Height="73" Style="{DynamicResource TabItem2}"  >
+                    <TabItem.Background>
+                        <ImageBrush ImageSource="/images/subnav_04.png"></ImageBrush>
+                    </TabItem.Background>
+                    <Grid Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition />
+                            <RowDefinition Height="35" />
+                            <RowDefinition />
+                            <RowDefinition Height="100" />
+                        </Grid.RowDefinitions>
+                        <StackPanel VerticalAlignment="Center" Margin="20,0">
+                            <TextBlock x:Name="治疗日期" Foreground="#FF000000" FontSize="16" FontFamily="Microsoft YaHei" IsHyphenationEnabled="True"  TextAlignment="Left" TextWrapping="Wrap" Text="治疗日期"/>
+                        </StackPanel>
+
+                        <Border BorderThickness="1" BorderBrush="#d9d9d9" Grid.Row="1" MaxHeight="280" Height="Auto"  Width="332" Margin="10,1,10,30">
+                            <Grid HorizontalAlignment="Left"  >
+                                <DataGrid Name="gvLog" Grid.Row="1"  Grid.Column="1" Style="{DynamicResource DataGridStyle}" ItemsSource="{Binding }" SelectionChanged="gvLog_SelectionChanged">
+                                    <DataGrid.Resources>
+                                        <Style TargetType="{x:Type ScrollBar}">
+                                            <Setter Property="Template" Value="{StaticResource VerticalScrollBar}">
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <Trigger Property="Orientation" Value="Horizontal">
+                                                    <Setter Property="Width" Value="Auto"/>
+                                                    <Setter Property="Height" Value="100" />
+                                                </Trigger>
+                                                <Trigger Property="Orientation" Value="Vertical">
+                                                    <Setter Property="Width" Value="40"/>
+                                                    <Setter Property="Height" Value="Auto" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DataGrid.Resources>
+
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="编号"  IsReadOnly="True" Width="60" Binding="{Binding DayIndex}"/>
+                                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="治疗日期"  IsReadOnly="True" Width="115" Binding="{Binding DayTime}"/>
+                                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="治疗时间"  IsReadOnly="True" Width="115" Binding="{Binding DayTotalTime}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </Border>
+
+                        <StackPanel VerticalAlignment="Center" Grid.Row="2" Margin="20,0">
+                            <TextBlock x:Name="治疗模式分析报表" Foreground="#FF000000" FontSize="16" FontFamily="Microsoft YaHei" IsHyphenationEnabled="True"  TextAlignment="Left" TextWrapping="Wrap" Text="治疗模式分析报表"/>
+                        </StackPanel>
+
+                        <Border BorderThickness="1" BorderBrush="#d9d9d9" MaxHeight="274" Height="Auto" Grid.Row="3" Width="332" Margin="10,1,10,30">
+                            <Grid>
+                                <DataGrid Name="gvMode" Style="{DynamicResource DataGridStyle}" ItemsSource="{Binding }" SelectionChanged="gvMode_SelectionChanged">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="治疗模式" IsReadOnly="True" Width="150" Binding="{Binding ModeName}" />
+                                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="治疗时间" IsReadOnly="True" Width="133" Binding="{Binding TotalTime}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                            </Grid>
+                        </Border>
+
+                        <Button Content="评测报告" Height="66" Name="btnReport" Grid.Row="4" Style="{DynamicResource ProButton}" Width="126"  Margin="113,1,113,33" Click="btnReport_Click" />
+                    </Grid>
+                </TabItem>
+                <TabItem Name="tabChart" Width="118" Height="73" Style="{DynamicResource TabItem3}" >
+                    <TabItem.Background>
+                        <ImageBrush ImageSource="/images/subnav_05.png"></ImageBrush>
+                    </TabItem.Background>
+                    
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100" />
+                            <RowDefinition />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="100" />
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <!--开始时间-->
+                            <Grid>
+                                <Grid.RowDefinitions >
+                                    <RowDefinition  Height="27" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <TextBlock Name="tbStartTime" Text="开始日期：" FontFamily="Microsoft YaHei" Foreground="#FF656565" FontSize="16" Margin="7,0,0,0" Width="203"></TextBlock>
+                                </Grid>
+                                <DatePicker Name="BeginTime" CalendarStyle="{StaticResource CalendarStyle}" 
+                    Style="{StaticResource ShortDatePickerStyle}" 
+                    SelectedDate="{Binding StartTime}" Height="51" Width="170"   VerticalAlignment="Center" HorizontalAlignment="Left" Margin="3,5,0,10" Grid.Row="1">
+                                </DatePicker>
+                            </Grid>
+                            <!--结束时间-->
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions >
+                                    <RowDefinition  Height="27" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <TextBlock Name="tbEndTime" Text="结束日期：" FontFamily="Microsoft YaHei" Foreground="#FF656565" FontSize="16" Margin="7,0,0,0" Width="203"></TextBlock>
+                                </Grid>
+                                <DatePicker Name="EndTime" CalendarStyle="{StaticResource CalendarStyle}" 
+                    Style="{StaticResource ShortDatePickerStyle}" 
+                    SelectedDate="{Binding EndTime}" Height="51" Width="170"   VerticalAlignment="Center" HorizontalAlignment="Left" Margin="3,5,0,10" Grid.Row="1">
+                                </DatePicker>
+
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <DataGrid x:Name="gvItem"  Grid.Row="0" SelectionMode="Single" Style="{StaticResource DataGridStyle}" ItemsSource="{Binding }" SelectionChanged="gvItem_SelectionChanged"  >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}"  IsReadOnly="True" Width="352" Binding="{Binding ExItemName}" >
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Height" Value="50" />
+                                                <Setter Property="Foreground" Value="#666666"/>
+                                                <Setter Property="FontWeight" Value="Normal" />
+                                                <Setter Property="FontFamily" Value="SimHei"/>
+                                                <Setter Property="FontSize" Value="16"/>
+                                                <Setter Property="Background">
+                                                    <Setter.Value>
+                                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                            <GradientStop Color="#f9f9f9" Offset="0.3"/>
+                                                            <GradientStop Color="#dbdbdb" Offset="0.6"/>
+                                                            <GradientStop Color="#bcbcbc" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Setter Property="BorderBrush" Value="#a9a9a9"/>
+                                                <Setter Property="BorderThickness" Value="0"/>
+                                                <Setter Property="MinWidth" Value="350"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+
+                                                <Setter  Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                                                            <Grid Width="353" Height="50">
+                                                                <Image x:Name="patient" Source="images/bgAction.png"  Width="353" HorizontalAlignment="Left"  Tag="patient"></Image>
+                                                            </Grid>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                    </DataGridTextColumn>
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        <Button Content="查看图表" Height="66" Name="btnSelectChart" Grid.Row="3" Style="{DynamicResource ProButton}" Width="126" Click="btnSelectChart_Click" Margin="113,1,113,33" />
+                    </Grid>
+                </TabItem>
+                <TabItem Name="tabFitResult" Visibility="Collapsed" Width="89" Height="55" Style="{DynamicResource TabItem4}" >
+                    <TabItem.Background>
+                        <ImageBrush ImageSource="/images/subnav_06.png"></ImageBrush>
+                    </TabItem.Background>
+<Grid Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition />
+                            <RowDefinition Height="35" />
+                            <RowDefinition />
+                            <RowDefinition Height="100" />
+                        </Grid.RowDefinitions>
+                        <StackPanel VerticalAlignment="Center" Margin="20,0">
+                            <TextBlock x:Name="旋转Fit" Foreground="#FF000000" FontSize="16" FontFamily="Microsoft YaHei" IsHyphenationEnabled="True"  TextAlignment="Left" TextWrapping="Wrap" Text="旋转Fit"/>
+                        </StackPanel>
+
+                        <Border BorderThickness="1" BorderBrush="#d9d9d9" Grid.Row="1" MaxHeight="280" Height="Auto"  Width="332" Margin="10,1,10,10">
+                            <Grid HorizontalAlignment="Left"  >
+                                <DataGrid Name="gvRotationFit" Grid.Row="1"  Grid.Column="1" Style="{DynamicResource DataGridStyle}" ItemsSource="{Binding }" SelectionChanged="gvRotationFit_SelectionChanged" >
+                                    <DataGrid.Resources>
+                                        <Style TargetType="{x:Type ScrollBar}">
+                                            <Setter Property="Template" Value="{StaticResource VerticalScrollBar}">
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <Trigger Property="Orientation" Value="Horizontal">
+                                                    <Setter Property="Width" Value="Auto"/>
+                                                    <Setter Property="Height" Value="100" />
+                                                </Trigger>
+                                                <Trigger Property="Orientation" Value="Vertical">
+                                                    <Setter Property="Width" Value="40"/>
+                                                    <Setter Property="Height" Value="Auto" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DataGrid.Resources>
+
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="编号"  IsReadOnly="True" Width="50" Binding="{Binding DayIndex}"/>
+                                        <DataGridTextColumn Header="治疗日期"  IsReadOnly="True" Width="110" Binding="{Binding DayTime}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                                    <Setter Property="Height" Value="auto"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="左"  IsReadOnly="True" Width="65" Binding="{Binding LeftValue}"/>
+                                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="右"  IsReadOnly="True" Width="65" Binding="{Binding RightValue}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </Border>
+
+                        <StackPanel VerticalAlignment="Center" Grid.Row="2" Margin="20,0">
+                            <TextBlock x:Name="曲伸Fit" Foreground="#FF000000" FontSize="16" FontFamily="Microsoft YaHei" IsHyphenationEnabled="True"  TextAlignment="Left" TextWrapping="Wrap" Text="曲伸Fit"/>
+                        </StackPanel>
+
+                        <Border BorderThickness="1" BorderBrush="#d9d9d9" MaxHeight="274" Height="Auto" Grid.Row="3" Width="332" Margin="10,1,10,0">
+                            <Grid HorizontalAlignment="Left"  >
+                                <DataGrid Name="gvProtrusiveOrBendFit" Style="{DynamicResource DataGridStyle}" ItemsSource="{Binding }" SelectionChanged="gvProtrusiveOrBendFit_SelectionChanged" >
+                                    <DataGrid.Resources>
+                                        <Style TargetType="{x:Type ScrollBar}">
+                                            <Setter Property="Template" Value="{StaticResource VerticalScrollBar}">
+                                            </Setter>
+                                            <Style.Triggers>
+                                                <Trigger Property="Orientation" Value="Horizontal">
+                                                    <Setter Property="Width" Value="Auto"/>
+                                                    <Setter Property="Height" Value="100" />
+                                                </Trigger>
+                                                <Trigger Property="Orientation" Value="Vertical">
+                                                    <Setter Property="Width" Value="40"/>
+                                                    <Setter Property="Height" Value="Auto" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DataGrid.Resources>
+
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="编号"  IsReadOnly="True" Width="50" Binding="{Binding DayIndex}"/>
+                                        <DataGridTextColumn Header="治疗日期"  IsReadOnly="True" Width="110" Binding="{Binding DayTime}">
+                                            <DataGridTextColumn.ElementStyle>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                                    <Setter Property="Height" Value="auto"/>
+                                                </Style>
+                                            </DataGridTextColumn.ElementStyle>
+                                        </DataGridTextColumn>
+                                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="最大"  IsReadOnly="True" Width="65" Binding="{Binding MaxValue}"/>
+                                        <DataGridTextColumn ElementStyle="{StaticResource ContentCenterStyle}" Header="最小"  IsReadOnly="True" Width="65" Binding="{Binding MinValue}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                            </Grid>
+                        </Border>
+    
+                      <!--<Button Content="评测报告" Height="66" Name="btnReport" Grid.Row="4" Style="{DynamicResource ProButton}" Width="126"  Margin="113,1,113,33" Click="btnReport_Click" />-->
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Border>
+        <!--训练记录结束-->
+
+        <Border Grid.Column="2" Grid.Row="2" >
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="2" />
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="2" />
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+                <!--选项开始-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Margin="6,0,0,0" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition  Height="27" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid>
+                                <TextBlock Name="tbAction" Text="动作" FontFamily="Microsoft YaHei" Foreground="#FF656565" FontSize="16" Margin="7,0,0,0" Width="203"></TextBlock>
+                            </Grid>
+                            <ComboBox Name="CboAction" Grid.Row="1" Height="51" Width="196" FontSize="16" FontFamily="Microsoft YaHei" Foreground="#666666" SelectionChanged="CboAction_SelectionChanged" >
+
+                                <ComboBoxItem Content="请选择动作"  Tag="SelectAction"   />
+                                <ComboBoxItem Content="旋转"  Tag="Rotation"   />
+                                <ComboBoxItem Content="前屈" Tag="Protrusive" />
+                                <ComboBoxItem Content="后伸"  Tag="Bend" />
+                                <ComboBoxItem Content="前屈后伸"  Tag="ProtrusiveOrBend" />
+                            </ComboBox>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Margin="6,0,0,0"  Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition  Height="27" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid>
+                                <TextBlock Name="tbTitle" Text="训练模式" FontFamily="Microsoft YaHei" Foreground="#FF656565" FontSize="16" Margin="7,0,0,0" Width="203"></TextBlock>
+                            </Grid>
+                            <ComboBox Name="CboMode" Grid.Row="1" Height="51" Width="196" FontSize="16" FontFamily="Microsoft YaHei" Foreground="#666666">
+                                <ComboBoxItem Content="请选择模式"  Tag="SelectMode"    />
+                                <ComboBoxItem Content="被动运动模式"  Tag="Guided"    />
+                                <!--<ComboBoxItem Content="主动运动" Tag="Free" Visibility="Hidden" />-->
+                                <ComboBoxItem Content="助动运动"  Tag="Initiated" />
+                                <ComboBoxItem Content="向心运动模式" Tag="FreeCounterWeight" />
+                                <ComboBoxItem Content="离心运动模式" Tag="Lixin" />
+                                <!--<ComboBoxItem Content="等张运动模式"  Tag="FreeConstantResistance" />-->
+                                <ComboBoxItem Content="等长运动模式" Tag="IsotonicA" />
+                                <ComboBoxItem Content="协调性训练模式"  Tag="IsotonicB" />
+                                <ComboBoxItem Content="等速运动模式" Tag="Dengsu" />
+                                <!--<ComboBoxItem Content="推箱子"  Tag="Sokoban" />-->
+                            </ComboBox>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Margin="2,0,0,0"  Grid.Column="2">
+                        <my:SetControl x:Name="setControlForce"  MinValue="0" IsEnabled="False"  MaxValue="12" Step="1" Value="3"   ContextText="力量"  Height="77" ></my:SetControl>
+                    </StackPanel>
+                    <StackPanel Margin="2,0,0,0" Grid.Row="1">
+                        <my:SetControl x:Name="setControlMinAngle"  MinValue="-20" IsEnabled="False"  MaxValue="30" Step="1" Value="-20"   ContextText="最小角度"  Height="77"></my:SetControl>
+                    </StackPanel>
+                    <StackPanel Margin="2,0,0,0" Grid.Row="1" Grid.Column="1">
+                        <my:SetControl x:Name="setControlMaxAngle"  MinValue="0" IsEnabled="False"  MaxValue="90" Step="1" Value="20"   ContextText="最大角度"  Height="77" ></my:SetControl>
+                    </StackPanel>
+                    <StackPanel Margin="2,0,0,0"  Grid.Row="1" Grid.Column="2">
+                        <my:SetControl x:Name="setControlSpeed"  MinValue="1" IsEnabled="False"  MaxValue="10" Step="1" Value="2"   ContextText="速度"  Height="77"></my:SetControl>
+                    </StackPanel>
+                    <StackPanel Margin="6,0,0,0" Grid.Row="2"  >
+                        <my:SetControl   x:Name="setControlGroup"  MinValue="1"  MaxValue="30" Step="1"  Value="1"  ContextText="分组"  Height="77" ></my:SetControl>
+                    </StackPanel>
+                    <StackPanel Margin="6,0,0,0" Grid.Row="2" Grid.Column="1">
+                        <my:SetControl   x:Name="setControlTimes"  MinValue="1"  MaxValue="100" Step="1"  Value="5"  ContextText="次数"  Height="77" ></my:SetControl>
+                    </StackPanel>
+
+                    <StackPanel Margin="2,0,0,0" Grid.Row="2" Grid.Column="2">
+                        <my:SetControl x:Name="setControlPosition"  MinValue="-30" IsEnabled="False"  MaxValue="60" Step="5" Value="0"   ContextText="初始位置"  Height="77" ></my:SetControl>
+                    </StackPanel>
+
+                    <Grid Grid.Column="1"  Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button Name="btnSaveCourse"  Style="{DynamicResource ProButton}" Content="保存处方" Height="40" Width="80" Click="btnSaveCourse_Click" Margin="15,4,21,6" Grid.RowSpan="2" />
+                        <Button Name="btnChange" Grid.Column="1" Style="{DynamicResource ProButton}" Content="保存" Height="40" Width="80" Click="btnChange_Click" Margin="15,4,21,6" Grid.RowSpan="2" />
+                    </Grid>
+                    <Grid Grid.Column="2"  Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button Name="btnClear" Grid.Column="1" Style="{DynamicResource ProButton}" Content="清空" Height="40" Width="80" VerticalAlignment="Bottom" Click="btnClear_Click" Margin="18,0,18,7" Grid.RowSpan="2" />
+                        <Button Name="btnSave" Style="{DynamicResource ProButton}" Content="新增" Height="40" Width="80" Click="btnSave_Click" Margin="18,4,18,6" Grid.RowSpan="2" />
+                    </Grid>
+                </Grid>
+                <!--选项结束-->
+                <!--选中开始-->
+                <Grid Grid.Row="1" Background="Green" />
+
+                <Grid Grid.Row="2" Background="#eeeeee" >
+                    <Grid>
+                        <ListBox Name="MyActionListBox"  Background="#eeeeee"  Margin="8,3" SelectionMode="Single" ItemsSource="{Binding }"  SelectionChanged="MyActionListBox_SelectionChanged" >
+                            <ListBox.Template>
+                                <ControlTemplate TargetType="{x:Type ListBox}">
+                                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                        <WrapPanel Orientation="Horizontal" IsItemsHost="True" ScrollViewer.CanContentScroll="True"/>
+                                    </ScrollViewer>
+                                </ControlTemplate>
+                            </ListBox.Template>
+
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Vertical" Height="92" Width="110">
+                                        <Image Name="myActionImg" Source="{Binding Path=PicturePath,Converter={StaticResource imgcov}}" Cursor="Hand"  Height="83" Width="95" Margin="0,10">
+                                            <Image.Style>
+                                                <Style TargetType="Image">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="False">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                        <!--,Converter=imgcov-->
+                                        <Image Source="{Binding Path=PicturePath}"  Cursor="Hand" Height="83" Width="95" Margin="0,10">
+                                            <Image.Style>
+                                                <Style TargetType="Image">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+
+                                        <TextBlock  Foreground="#999999" FontSize="12"   FontFamily="Microsoft YaHei" IsHyphenationEnabled="True" Padding="10,0"  TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=ActionName}" Margin="0,-28,0,0" Width="105" >
+                                                         <TextBlock.Style>
+                                                            <Style TargetType="TextBlock">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="False">
+                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                        </TextBlock>
+
+                                        <TextBlock  Foreground="#FFFFFF" FontSize="12"   FontFamily="Microsoft YaHei" IsHyphenationEnabled="True" Padding="10,0"  TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=ActionName}" Margin="0,-28,0,0" Width="105" >
+                                                          <TextBlock.Style>
+                                                            <Style TargetType="TextBlock">
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="True">
+                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                        </TextBlock>
+                                        <TextBox FontSize="12"  Text="{Binding Path=Id}"  Width="1"></TextBox>
+                                        <Button x:Name="btnMyAction"  Cursor="Hand" Margin="80,-230,0,20"
+                                                            Background="#eeeeee"   Tag="{Binding Id}" Click="btnMyAction_Click" >
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Visibility" Value="Hidden" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="Button">
+                                                    <ContentControl Name="cc">
+                                                        <Image Source="/images/closed.png" Width="28" Height="28" />
+                                                    </ContentControl>
+                                                </ControlTemplate>
+                                            </Button.Template>
+
+                                        </Button>
+
+                                    </StackPanel>
+
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </Grid>
+                <!--选中结束-->
+                <!--操作开始-->
+                <Grid Grid.Row="3" Background="Green" />
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Button Name="btnTUp"  Grid.Row="0" Visibility="Hidden"  Style="{DynamicResource ProButton}" Content="上" Height="36" Width="76"  VerticalAlignment="Center" Click="btnTUp_Click" />
+                        <Button Name="btnTStop"  Grid.Row="1" Visibility="Hidden" Style="{DynamicResource ProButton}" Content="停止" Height="36" Width="76"  VerticalAlignment="Center" Click="btnTStop_Click"  />
+                        <Button Name="btnTDown"  Grid.Row="2" Visibility="Hidden"  Style="{DynamicResource ProButton}" Content="下" Height="36" Width="76"  VerticalAlignment="Center" Click="btnTDown_Click"  />
+
+                    </Grid>
+                 
+                    <Grid>
+                        <Menu  Name="mainMenu" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <MenuItem x:Name="subMenu"  Style="{DynamicResource QuickInputStyle}" Focusable="False" Header="范围评测"  HorizontalAlignment="Left" VerticalAlignment="Center" Height="66"/>
+                        </Menu>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                    <Menu  Name="mainMenu1" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <MenuItem x:Name="subMenu1"  Style="{DynamicResource QuickInputStyle}" Focusable="False" Header="力量评测"  HorizontalAlignment="Left" VerticalAlignment="Center" Height="66"/>
+                        </Menu>
+                    </Grid>
+                    <Button Name="btnClearBreakdown"  Grid.Column="2"  Style="{DynamicResource ProButton}" Content="故障清零" Height="66" Width="126"  VerticalAlignment="Center" Click="btnClearBreakdown_Click"  />
+                    <Button Name="btnClearGeocoder"  Grid.Column="3"  Style="{DynamicResource ProButton}" Content="传感器清零" Height="66" Width="126"  VerticalAlignment="Center" Click="btnClearGeocoder_Click" />
+                    <Button Name="btnStart"  Grid.Column="4"  Style="{DynamicResource ProButton}" Content="开  始" Height="66" Width="126"  VerticalAlignment="Center" Click="btnStart_Click" />
+
+
+                </Grid>
+                <!--操作结束-->
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

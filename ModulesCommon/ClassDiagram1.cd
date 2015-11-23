@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LumbarRobot.ModulesCommon.ByteBuffer" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKAAAAgCAgAAAAgAAIAAAAAAAAAAABAAAAAAABAQEA=</HashCode>
+      <FileName>ByteBuffer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.CameraInfo" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAABAAAAAAAAIAAAAAADCAAAAAAAAAAAAIACI=</HashCode>
+      <FileName>CameraInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.Command" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEACAIAAACCAAAAAQAEAAECAAAAAgAAA=</HashCode>
+      <FileName>Command.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.CMDClient" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>g0RAAADAgAiAUAAhIABCABADKBAADABACgAkEABFhIA=</HashCode>
+      <FileName>CommandClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.DataCommunicationService" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAiAAAAAAAAAEAAAEAAAAAAAQAABAACCAAAA=</HashCode>
+      <FileName>DataCommunicationService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.CommandEventArgs" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.ServerEventArgs" Collapsed="true">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>EventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.GameInitializeInfo" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQBAAAAAAAAgARAABiAgAAgAAAACAAAAhAAAAAABAAA=</HashCode>
+      <FileName>GameInitializeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.GameResultInfo" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAACAogAAACIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameResultInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.GlobalVar" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAQFACAAEgAAEWYACAFCAAgGQgAihA4BIAADgQ=</HashCode>
+      <FileName>Global.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.DataRecievedArgs" Collapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAA=</HashCode>
+      <FileName>IDataCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.MoveCommandInfo" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAAAAAAAAAAAABAAAAASAAAAAAAgAAAgAA=</HashCode>
+      <FileName>MoveCommandInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.NextInfo" Collapsed="true">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAABABAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>MoveCommandInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.ArrivedInfo" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAIAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>MoveCommandInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.MyLock" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAEAAAABEgAAAAAAACAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyLock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.NullMyLock" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyLock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.CarmaEventArgs" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OSC\OSCEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.GameReturnEventArgs" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OSC\OSCEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.EyeMoveInfonEventArgs" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OSC\OSCEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.StartInitEventArgs" Collapsed="true">
+    <Position X="7" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>OSC\OSCEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LumbarRobot.ModulesCommon.TrajectoryInfo" Collapsed="true">
+    <Position X="8.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAYAABACAAAAAAAABAAAAQQAIAEwAAAAAQAAACAAAA=</HashCode>
+      <FileName>TrajectoryInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModulesCommon.GameRunInfo" Collapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>GameRunInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityOSC.OSCBundle" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAYAAAAAAAAAAAAAAQAEAAAAAAAAAAI=</HashCode>
+      <FileName>OSC\OSCBundle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityOSC.OSCClient" Collapsed="true">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAgAAEAAAIAACAgAAAAAAAAAAACAIAA=</HashCode>
+      <FileName>OSC\OSCClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityOSC.OSCMessage" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAACAAAAAAQAAAAABAoAAAABAUgEAAAAAAAAAAI=</HashCode>
+      <FileName>OSC\OSCMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityOSC.OSCPacket" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAACABAAAAAQABAAAAAAAAAAAERBHAAgAAEAABAI=</HashCode>
+      <FileName>OSC\OSCPacket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityOSC.OSCServer" Collapsed="true">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAABQAAAKACIAgAAAAYADAAgACAAAA=</HashCode>
+      <FileName>OSC\OSCServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OSCHandler" Collapsed="true">
+    <Position X="10.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGABAAAAgAEAAAACAAAAAAEABgAIAAwBACAAEAAAA=</HashCode>
+      <FileName>OSCHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="ServerLog" Collapsed="true">
+    <Position X="7" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAACAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>OSCHandler.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ClientLog" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAABAAAABAAAAAA=</HashCode>
+      <FileName>OSCHandler.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="LumbarRobot.ModulesCommon.IDataCommunication" Collapsed="true">
+    <Position X="5.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAIAAIAAAAAAAAAAAAAAIAEAAAAAAAACAAAA=</HashCode>
+      <FileName>IDataCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="LumbarRobot.ModulesCommon.CameraMoveCommandType" Collapsed="true">
+    <Position X="5.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAIAgAAAAAAAAAAAAACAAAoAAAAAAAAEAA=</HashCode>
+      <FileName>CameraInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LumbarRobot.ModulesCommon.CameraPositionType" Collapsed="true">
+    <Position X="7" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAgAAABAAAAEAAAAAAAAwgAAAAAAAAAA=</HashCode>
+      <FileName>CameraInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LumbarRobot.ModulesCommon.CommandType" Collapsed="true">
+    <Position X="8.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAEIggABAoAEAEgAAASAACAABIRQQAaAAAVIA=</HashCode>
+      <FileName>Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LumbarRobot.ModulesCommon.Difficulty" Collapsed="true">
+    <Position X="10.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>GameInitializeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="LumbarRobot.ModulesCommon.CommandReceivedEventHandler" Collapsed="true">
+    <Position X="8.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.CommandSentEventHandler" Collapsed="true">
+    <Position X="12.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.CommandSendingFailedEventHandler" Collapsed="true">
+    <Position X="10.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.ServerDisconnectedEventHandler" Collapsed="true">
+    <Position X="12.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.DisconnectedEventHandler" Collapsed="true">
+    <Position X="10.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.ConnectingSuccessedEventHandler" Collapsed="true">
+    <Position X="7" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.ConnectingFailedEventHandler" Collapsed="true">
+    <Position X="5.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.NetworkDeadEventHandler" Collapsed="true">
+    <Position X="10.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.NetworkAlivedEventHandler" Collapsed="true">
+    <Position X="8.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.DataRecievedHandler" Collapsed="true">
+    <Position X="8.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDataCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.LogEventHandler" Collapsed="true">
+    <Position X="7" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDataCommunication.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.CallMethod" Collapsed="true">
+    <Position X="5.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyLock.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.CameraMoveEventHandler" Collapsed="true">
+    <Position X="7" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>OSC\OSCEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.GameReturnEventHandler" Collapsed="true">
+    <Position X="5.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OSC\OSCEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.EyeMoveInfonEventHandler" Collapsed="true">
+    <Position X="12.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>OSC\OSCEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LumbarRobot.ModulesCommon.StartInitEventHandler" Collapsed="true">
+    <Position X="5.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OSC\OSCEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

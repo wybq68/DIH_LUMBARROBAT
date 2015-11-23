@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="LumbarRobot.Data.Gameparameter, LumbarRobot.Data" table="gameparameter">
+    <id name="Id" type="String" unsaved-value="null">
+      <column name="parameterId" length="96" sql-type="varchar" not-null="true" unique="true"/>
+      <generator class="assigned" />
+
+    </id>
+    <property name="PatientId" type="String">
+      <column name="PatientId" length="135" sql-type="varchar" not-null="true"/>
+    </property>
+    <property name="GameId" type="String">
+      <column name="GameId" length="96" sql-type="varchar" not-null="true"/>
+    </property>
+    <property name="Speed" type="Int32">
+      <column name="Speed" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Force" type="Int32">
+      <column name="Force" sql-type="int" not-null="false"/>
+    </property>
+    <property name="HardLevel" type="String">
+      <column name="HardLevel" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="LeftMaxPoint" type="String">
+      <column name="LeftMaxPoint" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="RightMaxPoint" type="String">
+      <column name="RightMaxPoint" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="FrontMaxPoint" type="String">
+      <column name="FrontMaxPoint" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="BackMaxPoint" type="String">
+      <column name="BackMaxPoint" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="UpMaxPoint" type="String">
+      <column name="UpMaxPoint" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="DownMaxPoint" type="String">
+      <column name="DownMaxPoint" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="MinTiggerForce" type="String">
+      <column name="MinTiggerForce" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="MaxTiggerForce" type="String">
+      <column name="MaxTiggerForce" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+  </class>
+</hibernate-mapping>

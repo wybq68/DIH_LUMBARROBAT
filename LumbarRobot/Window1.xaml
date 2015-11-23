@@ -1,0 +1,28 @@
+﻿<Window x:Class="LumbarRobot.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" 
+        Title="Window1" Height="906" Width="1548"  xmlns:my="clr-namespace:LumbarRobot.ActionUserControl">
+    <Canvas>
+    <Button Content="FLT" Height="23" Name="button1" Width="75" Canvas.Left="138" Canvas.Top="28" Click="button1_Click" />
+        <TextBox Canvas.Left="12" Canvas.Top="28" Height="23" Name="textBox1" Width="120" Text="15" />
+        <TextBox Canvas.Left="227" Canvas.Top="28" Height="23" Name="textBox2" Width="120" Text="10" />
+        <Button Canvas.Left="57" Canvas.Top="724" Content="圆" Height="23" Name="button9" Width="75" Click="button9_Click" />
+        <Button Canvas.Left="193" Canvas.Top="724" Content="这线" Height="23" Name="button10" Width="75" Click="button10_Click" />
+        <!--<my:Eilelc2 Canvas.Left="12" Canvas.Top="61" x:Name="eilelc21" Width="400" Height="400" ElicleColor="#FF2736E8" FltColor="#FFBDE82D" FltValu="18" FltMinusValue="-25" BackMinusValu="-30" BackValue="23" BackColor="#FF21C794" RunColor="#FF4CF203" OutBackColor="#FFDE0B0B" OutFltColor="#FFE5881A" />-->
+        <my:Eilelc2 BackColor="#FF194B00" BackMinusValu="-100" BackMinusValu1="-90" BackValue="60" BackValue1="70" Background="{x:Null}" Canvas.Left="19" Canvas.Top="57" ElicleColor="#FF0000F7" FltColor="#FFBA7800" FltColor1="#FF1A76BC" FltMinusValue="0" Focusable="False" Height="328" x:Name="eilelc21" OutBackColor="Red" OutFltColor="#FFEFCD12" RunColor="#FF09F209" Width="328" />
+        <Button Canvas.Left="196" Canvas.Top="400" Content="动点" Height="23" Name="button17" Width="75" Click="button17_Click" />
+        <TextBox Canvas.Left="57" Canvas.Top="400" Height="23" Name="textBox8" Width="120" Text="0" />
+        <my:TimeSina Canvas.Left="369" Canvas.Top="28" x:Name="timeSina2" Height="368" Width="986" BacklineColor="#FFEB1E1E" />
+        <Slider Canvas.Left="456" Canvas.Top="486" Height="23" Name="slider1" Width="458" Maximum="200" Minimum="-200" ValueChanged="slider1_ValueChanged_1" />
+        <TextBox Canvas.Left="528" Canvas.Top="458" Height="23" Name="textBox3" Width="120" />
+        <Button Canvas.Left="379" Canvas.Top="414" Content="复位" Height="23" Name="button2" Width="75" Click="button2_Click_1" />
+        <TextBox Canvas.Left="510" Canvas.Top="415" Height="23" Name="textBox4" Width="120" />
+        <Button Canvas.Left="654" Canvas.Top="415" Content="设定最大角度" Height="23" Name="button3" Width="75" Click="button3_Click_1" />
+        <Button Canvas.Left="792" Canvas.Top="415" Content="画目标线" Height="23" Name="button4" Width="96" Click="button4_Click_1" />
+        <Button Canvas.Left="654" Canvas.Top="457" Content="Button" Height="23" Name="button5" Width="75" Click="button5_Click_1" />
+        <Slider Canvas.Left="456" Canvas.Top="558" Height="23" Name="slider2" Width="458" Maximum="300" Minimum="-300" ValueChanged="slider2_ValueChanged_1" />
+        <Button Canvas.Left="955" Canvas.Top="426" Content="复们true" Height="23" Name="button6" Width="75" Click="button6_Click_1" />
+        <!--<my:TimeSina Canvas.Left="780" Canvas.Top="28" x:Name="timeSina1" Height="196" Width="500" BacklineColor="#FF9619A4" MaxArc="80" />-->
+    </Canvas>
+</Window>

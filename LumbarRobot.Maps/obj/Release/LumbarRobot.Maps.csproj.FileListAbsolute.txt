@@ -1,0 +1,5 @@
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Maps\bin\Release\LumbarRobot.Maps.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Maps\bin\Release\LumbarRobot.Maps.pdb
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Maps\obj\Release\LumbarRobot.Maps.csprojResolveAssemblyReference.cache
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Maps\obj\Release\LumbarRobot.Maps.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Maps\obj\Release\LumbarRobot.Maps.pdb

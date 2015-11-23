@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="LumbarRobot.Data.Prescriptiondetails, LumbarRobot.Data" table="prescriptiondetails">
+    <id name="Id" type="String" unsaved-value="null">
+      <column name="OpSn" length="96" sql-type="char" not-null="true" unique="true"/>
+      <generator class="assigned" />
+
+    </id>
+
+    <property name="ActionId" type="Int32">
+      <column name="ActionId" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ModeId" type="Int32">
+      <column name="ModeId" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PrescriptionId" type="String">
+      <column name="PrescriptionId" length="96" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="PForce" type="Int32">
+      <column name="PForce" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Speed" type="Int32">
+      <column name="Speed" sql-type="int" not-null="false"/>
+    </property>
+    <property name="MinAngle" type="Int32">
+      <column name="MinAngle" sql-type="int" not-null="false"/>
+    </property>
+    <property name="MaxAngle" type="Int32">
+      <column name="MaxAngle" sql-type="int" not-null="false"/>
+    </property>
+    <property name="PGroup" type="Int32">
+      <column name="PGroup" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Times" type="Int32">
+      <column name="Times" sql-type="int" not-null="false"/>
+    </property>
+    <property name="LastLocation" type="Int32">
+      <column name="LastLocation" sql-type="int" not-null="false"/>
+    </property>
+    <property name="LastTime" type="DateTime">
+      <column name="lastTime" sql-type="datetime" not-null="false"/>
+    </property>
+  </class>
+</hibernate-mapping>

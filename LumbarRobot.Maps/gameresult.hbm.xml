@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="LumbarRobot.Data.Gameresult, LumbarRobot.Data" table="gameresult">
+    <id name="Id" type="Int32" unsaved-value="0">
+      <column name="idGameReult" sql-type="int" not-null="true" unique="true"/>
+      <generator class="native" />
+
+    </id>
+    <property name="GameId" type="Int32">
+      <column name="GameId" sql-type="int" not-null="true"/>
+    </property>
+    <property name="PatientId" type="String">
+      <column name="PatientId" length="135" sql-type="varchar" not-null="true"/>
+    </property>
+    <property name="HardLevel" type="Int32">
+      <column name="HardLevel" sql-type="int" not-null="false"/>
+    </property>
+    <property name="ForceLevel" type="Int32">
+      <column name="ForceLevel" sql-type="int" not-null="false"/>
+    </property>
+    <property name="HandType" type="Int32">
+      <column name="HandType" sql-type="int" not-null="true"/>
+    </property>
+    <property name="SetTime" type="Int32">
+      <column name="SetTime" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Score" type="Int32">
+      <column name="Score" sql-type="int" not-null="false"/>
+    </property>
+    <property name="CompleteTime" type="Int32">
+      <column name="CompleteTime" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Percentage" type="Int32">
+      <column name="Percentage" sql-type="int" not-null="false"/>
+    </property>
+    <property name="CorrectlyNum" type="Int32">
+      <column name="CorrectlyNum" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Temp1" type="String">
+      <column name="Temp1" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Temp2" type="DateTime">
+      <column name="Temp2" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="Temp3" type="String">
+      <column name="Temp3" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Temp4" type="String">
+      <column name="Temp4" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Temp5" type="String">
+      <column name="Temp5" length="135" sql-type="varchar" not-null="false"/>
+    </property>
+  </class>
+</hibernate-mapping>

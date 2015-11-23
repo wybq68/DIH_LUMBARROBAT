@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class name="LumbarRobot.Data.EvaluteRecord, LumbarRobot.Data" table="EvaluteRecord">
+		<id name="EvaluteID" type="Int32" unsaved-value="0">
+			<column name="EvaluteID" sql-type="int" not-null="true" unique="true"/>
+              <generator class="assigned" /> 
+			
+		</id>
+		<property name="EvaluteName" type="String">
+			<column name="EvaluteName" length="150" sql-type="varchar" not-null="false"/>
+		</property>
+		<property name="EvaluteDate" type="DateTime">
+			<column name="EvaluteDate" sql-type="datetime" not-null="false"/>
+		</property>
+    <property name="PatientID" type="String">
+      <column name="PatientID" length="96" sql-type="varchar" not-null="true"/>
+    </property>
+	</class>
+</hibernate-mapping>

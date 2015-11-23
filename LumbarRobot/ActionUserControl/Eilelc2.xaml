@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="LumbarRobot.ActionUserControl.Eilelc2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded">
+
+    <Grid Name="backGrid"  >
+       
+        <Grid Name="grid" Margin="40,40,40,40"  >
+            <Label Name="showarc" Height="39" Width="80"  Margin="74,93,66,88" Content="0度" HorizontalContentAlignment="Center" FontFamily="Arial" FontSize="25" FontWeight="Bold" BorderBrush="#FFDE2222"></Label>
+            <Line Name="fltz" Visibility="Hidden" X1="0" Y1="0" X2="1" Y2="1" Fill="Yellow"></Line>
+            <Line Name="fltf" Visibility="Hidden" X1="0" Y1="0" X2="1" Y2="1" Fill="Yellow"></Line>
+            <Line Name="saiz" Visibility="Hidden" X1="0" Y1="0" X2="1" Y2="1" Fill="Blue"></Line>
+            <Line Name="saif" Visibility="Hidden" X1="0" Y1="0" X2="1" Y2="1" Fill="Blue"></Line>
+            <Line Name="saiz1" Visibility="Hidden" X1="0" Y1="0" X2="1" Y2="1" Fill="Blue"></Line>
+            <Line Name="saif1" Visibility="Hidden" X1="0" Y1="0" X2="1" Y2="1" Fill="Blue"></Line>
+        </Grid>
+
+    </Grid>
+</UserControl>

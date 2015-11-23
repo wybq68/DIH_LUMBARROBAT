@@ -1,0 +1,11 @@
+E:\腰椎\LumbarRobot\LumbarRobot.Communication\bin\Debug\LumbarRobot.Communication.dll
+E:\腰椎\LumbarRobot\LumbarRobot.Communication\bin\Debug\LumbarRobot.Communication.pdb
+E:\腰椎\LumbarRobot\LumbarRobot.Communication\obj\Debug\LumbarRobot.Communication.dll
+E:\腰椎\LumbarRobot\LumbarRobot.Communication\obj\Debug\LumbarRobot.Communication.pdb
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Communication\bin\Debug\LumbarRobot.Communication.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Communication\bin\Debug\LumbarRobot.Communication.pdb
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Communication\obj\Debug\LumbarRobot.Communication.csprojResolveAssemblyReference.cache
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Communication\obj\Debug\LumbarRobot.Communication.dll
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Communication\obj\Debug\LumbarRobot.Communication.pdb
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Communication\bin\Debug\LumbarRobot.Communication.dll.CodeAnalysisLog.xml
+C:\Users\bin\Documents\腰椎\LumbarRobot\LumbarRobot.Communication\bin\Debug\LumbarRobot.Communication.dll.lastcodeanalysissucceeded

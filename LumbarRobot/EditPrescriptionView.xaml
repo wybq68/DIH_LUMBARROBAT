@@ -1,0 +1,271 @@
+﻿<UserControl x:Class="LumbarRobot.EditPrescriptionView"
+             xmlns:my="clr-namespace:LumbarRobot.MyUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1366"
+             Height="768" Width="1366" Loaded="UserControl_Loaded" >
+
+    <UserControl.Resources>
+        <!--项目按钮-->
+        <Style x:Key="ProButton" TargetType="Button">
+            <Setter Property="Foreground" Value="white"/>
+            <!--修改模板属性-->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <!--控件模板-->
+                    <ControlTemplate TargetType="Button">
+                        <!--背景色-->
+                        <Border x:Name="back" Opacity="0.8" CornerRadius="3">
+                            <Border.BitmapEffect>
+                                <OuterGlowBitmapEffect Opacity="0.7" GlowSize="0" GlowColor="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Button.Background).(SolidColorBrush.Color)}"/>
+                            </Border.BitmapEffect>
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1.5">
+                                    <GradientBrush.GradientStops>
+                                        <GradientStopCollection>
+                                            <GradientStop Color="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Button.Background).(SolidColorBrush.Color)}" Offset="0.4"/>
+                                        </GradientStopCollection>
+                                    </GradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <!--前景色及边框-->
+                            <Border x:Name="fore" BorderThickness="1" CornerRadius="3" BorderBrush="#333333">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="#333333" Offset="0.5"/>
+                                            </GradientStopCollection>
+                                        </GradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <!--按钮内容-->
+                                <Border>
+                                    <TextBlock x:Name="content" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding  Content}" FontFamily="黑体" FontSize="16" Foreground="White" FontStretch="UltraExpanded">
+                                    </TextBlock>
+                                </Border>
+                            </Border>
+                        </Border>
+                        <!--触发器-->
+                        <ControlTemplate.Triggers>
+                            <!--鼠标移入移出-->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="6" Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation To="#99cc00" BeginTime="0:0:0.2" Duration="0:0:0.2" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation Duration="0:0:0.2" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <!--按钮按下弹起-->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="3" Duration="0:0:0.1" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation To="#99cc00" Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <!--按钮失效-->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="#333333"/>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation To="0" Duration="0:0:0.3" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <ColorAnimation To="#333333" Duration="0:0:0.3" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"/>
+                                            <ColorAnimation To="#333333" Duration="0:0:0.3" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="back" Storyboard.TargetProperty="(Border.BitmapEffect).(OuterGlowBitmapEffect.GlowSize)"/>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Opacity)"/>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Opacity)"/>
+                                            <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Direction)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="content" Storyboard.TargetProperty="(ContentPresenter.BitmapEffect).(DropShadowBitmapEffect.Color)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"/>
+                                            <ColorAnimation Duration="0:0:0.1" Storyboard.TargetName="fore" Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="374" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Background="Black" Opacity="0.45"></Grid>
+        <Grid Background="Black" Opacity="0.45" Grid.Row="2"></Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="750" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid Background="Black" Opacity="0.45"></Grid>
+            <Grid Background="Black" Opacity="0.45" Grid.Column="2"></Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/images/bgdetail.png"></ImageBrush>
+                    </Grid.Background>
+                  
+                    <!--关闭-->
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right">
+                        <Button Name="btnClosed" Margin="0,0,20,0" Click="btnClosed_Click">
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <ContentControl Name="cc">
+                                        <Image Source="/images/closed.png" Height="30" Width="30" />
+                                    </ContentControl>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                
+                    <!--选项开始-->
+                <Grid Grid.Row="1" Background="#cecece">
+                    <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  />
+                            <ColumnDefinition  />
+                            <ColumnDefinition  />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Margin="6,0,0,0" >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition  Height="27" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <TextBlock Name="tbAction" Text="动作" FontFamily="Microsoft YaHei" Foreground="#FF656565" FontSize="16" Margin="7,0,0,0" Width="203"></TextBlock>
+                                </Grid>
+                                <ComboBox Name="CboAction" Grid.Row="1" Height="51" Width="196" FontSize="16" FontFamily="Microsoft YaHei" Foreground="#666666" SelectionChanged="CboAction_SelectionChanged" >
+
+                                    <ComboBoxItem Content="请选择动作"  Tag="SelectAction"   />
+                                    <ComboBoxItem Content="旋转"  Tag="Rotation"   />
+                                    <ComboBoxItem Content="前屈" Tag="Protrusive " />
+                                    <ComboBoxItem Content="后伸"  Tag="Bend" />
+                                    <ComboBoxItem Content="前屈后伸"  Tag="ProtrusiveOrBend" />
+                                </ComboBox>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Margin="6,0,0,0"  Grid.Column="1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition  Height="27" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <TextBlock Name="tbTitle" Text="训练模式" FontFamily="Microsoft YaHei" Foreground="#FF656565" FontSize="16" Margin="7,0,0,0" Width="203"></TextBlock>
+                                </Grid>
+                                <ComboBox Name="CboMode" Grid.Row="1" Height="51" Width="196" FontSize="16" FontFamily="Microsoft YaHei" Foreground="#666666">
+                                    <ComboBoxItem Content="请选择模式"  Tag="SelectMode"    />
+                                    <ComboBoxItem Content="被动运动模式"  Tag="Guided"    />
+                                    <ComboBoxItem Content="助动运动"  Tag="Initiated"/>
+                                    <ComboBoxItem Content="向心运动模式" Tag="FreeCounterWeight" />
+                                    <ComboBoxItem Content="离心运动模式" Tag="Lixin" />
+                                <!--<ComboBoxItem Content="等张运动模式"  Tag="FreeConstantResistance" />-->
+                                    <ComboBoxItem Content="等长运动模式" Tag="IsotonicA" />
+                                    <ComboBoxItem Content="协调性训练模式"  Tag="IsotonicB" />
+                                    <ComboBoxItem Content="等速运动模式" Tag="Dengsu" />
+                                </ComboBox>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Margin="2,0,0,0"  Grid.Column="2">
+                            <my:SetControl x:Name="setControlForce"  MinValue="0" IsEnabled="False"  MaxValue="12" Step="1" Value="3"   ContextText="力量"  Height="77" ></my:SetControl>
+                        </StackPanel>
+                        <StackPanel Margin="2,0,0,0" Grid.Row="1">
+                            <my:SetControl x:Name="setControlMinAngle"  MinValue="-20" IsEnabled="False"  MaxValue="30" Step="1" Value="-20"   ContextText="最小角度"  Height="77"></my:SetControl>
+                        </StackPanel>
+                        <StackPanel Margin="2,0,0,0" Grid.Row="1" Grid.Column="1">
+                            <my:SetControl x:Name="setControlMaxAngle"  MinValue="0" IsEnabled="False"  MaxValue="90" Step="1" Value="20"   ContextText="最大角度"  Height="77" ></my:SetControl>
+                        </StackPanel>
+                        <StackPanel Margin="2,0,0,0"  Grid.Row="1" Grid.Column="2">
+                            <my:SetControl x:Name="setControlSpeed"  MinValue="1" IsEnabled="False"  MaxValue="10" Step="1" Value="2"   ContextText="速度"  Height="77"></my:SetControl>
+                        </StackPanel>
+                        <StackPanel Margin="6,0,0,0" Grid.Row="2"  >
+                            <my:SetControl   x:Name="setControlGroup"  MinValue="1"  MaxValue="30" Step="1"  Value="1"  ContextText="分组"  Height="77" ></my:SetControl>
+                        </StackPanel>
+                        <StackPanel Margin="6,0,0,0" Grid.Row="2" Grid.Column="1">
+                            <my:SetControl   x:Name="setControlTimes"  MinValue="1"  MaxValue="100" Step="1"  Value="5"  ContextText="次数"  Height="77" ></my:SetControl>
+                        </StackPanel>
+
+                        <StackPanel Margin="2,0,0,0" Grid.Row="2" Grid.Column="2">
+                            <my:SetControl x:Name="setControlPosition"  MinValue="-30" IsEnabled="False"  MaxValue="60" Step="5" Value="0"   ContextText="初始位置"  Height="77" ></my:SetControl>
+                        </StackPanel>
+
+                        <Grid Grid.Column="1"  Grid.Row="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="40" />
+                            </Grid.RowDefinitions>
+                           
+                        <Button Name="btnChange" Style="{DynamicResource ProButton}" Content="保存" Height="40" Width="80" Click="btnSavePrescription_Click" Margin="15,4,21,6" Grid.RowSpan="2" />
+                        </Grid>
+                        <Grid Grid.Column="2"  Grid.Row="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="40" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                    </Grid>
+                    </Grid>
+                    <!--选项结束-->
+                
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

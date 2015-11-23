@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="LumbarRobot.Data.Syspatient, LumbarRobot.Data" table="syspatient">
+    <id name="Id" type="String" unsaved-value="null">
+      <column name="PatientId" length="96" sql-type="char" not-null="true" unique="true"/>
+      <generator class="assigned" />
+
+    </id>
+    <property name="UserId" type="String">
+      <column name="UserId" length="96" sql-type="char" not-null="false" index="FK_Reference_14"/>
+    </property>
+    <property name="DiagnoseTypeId" type="String">
+      <column name="diagnoseTypeId" length="30" sql-type="varchar" not-null="false" index="FK_Reference_25"/>
+    </property>
+    <property name="UserName" type="String">
+      <column name="UserName" length="150" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="Sex" type="String">
+      <column name="Sex" length="3" sql-type="char" not-null="false"/>
+    </property>
+    <property name="Weight" type="Int32">
+      <column name="Weight" sql-type="int" not-null="false"/>
+    </property>
+    <property name="BirthDay" type="DateTime">
+      <column name="BirthDay" sql-type="datetime" not-null="true"/>
+    </property>
+    <property name="AfftectedHand" type="String">
+      <column name="AfftectedHand" length="6" sql-type="char" not-null="false"/>
+    </property>
+    <property name="OpDate" type="DateTime">
+      <column name="OpDate" sql-type="datetime" not-null="true"/>
+    </property>
+    <property name="CardNo" type="String">
+      <column name="CardNo" length="54" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="PatientCarNo" type="String">
+      <column name="PatientCarNo" length="150" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="DoctorID" type="String">
+      <column name="doctorID" length="150" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="BodyHeight" type="Int32">
+      <column name="BodyHeight" sql-type="int" not-null="false"/>
+    </property>
+    <property name="Note" type="String">
+      <column name="Note" length="65535" sql-type="text" not-null="false"/>
+    </property>
+    <property name="LastTime" type="DateTime">
+      <column name="lastTime" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="PinYin" type="String">
+      <column name="PinYin" length="150" sql-type="text" not-null="false"/>
+    </property>
+  </class>
+</hibernate-mapping>

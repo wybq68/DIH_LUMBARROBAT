@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="LumbarRobot.Data.Prescription, LumbarRobot.Data" table="prescription">
+    <id name="Id" type="String" unsaved-value="null">
+      <column name="PrescriptionId" length="96" sql-type="char" not-null="true" unique="true"/>
+      <generator class="assigned" />
+
+    </id>
+    <property name="PrescriptionName" type="String">
+      <column name="PrescriptionName" length="600" sql-type="varchar" not-null="false"/>
+    </property>
+
+    <property name="Traingoal" type="String">
+      <column name="Traingoal" length="600" sql-type="varchar" not-null="false"/>
+    </property>
+
+    <property name="TimesAll" type="String">
+      <column name="TimesAll" length="900" sql-type="varchar" not-null="false"/>
+    </property>
+
+    <property name="PatientId" type="String">
+      <column name="PatientId" length="96" sql-type="varchar" not-null="false"/>
+    </property>
+
+    <property name="UserId" type="String">
+      <column name="UserId" length="96" sql-type="varchar" not-null="false"/>
+    </property>
+
+    <property name="OpTime" type="DateTime">
+      <column name="OpTime" sql-type="datetime" not-null="false"/>
+    </property>
+    <property name="Note" type="String">
+      <column name="Note"  length="3000" sql-type="varchar" not-null="false"/>
+    </property>
+    <property name="LastTime" type="DateTime">
+      <column name="lastTime" sql-type="datetime" not-null="false"/>
+    </property>
+  </class>
+</hibernate-mapping>

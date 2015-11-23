@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F3201996-9AA4-49C7-A4E7-4B1EE81162C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LumbarRobot.Services</RootNamespace>
+    <AssemblyName>LumbarRobot.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IRobotAction.cs" />
+    <Compile Include="LumbarRobotController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RobotActions\BaseRobotAction.cs" />
+    <Compile Include="RobotActions\BendStrechStrengthEvaluationAction.cs" />
+    <Compile Include="RobotActions\BendStretchAssistedAction.cs" />
+    <Compile Include="RobotActions\BendStretchFitAction.cs" />
+    <Compile Include="RobotActions\BendStretchFreeAction.cs" />
+    <Compile Include="RobotActions\BendStretchGuidedAction.cs" />
+    <Compile Include="RobotActions\EvaluateAction.cs" />
+    <Compile Include="RobotActions\IsotonicAAction.cs" />
+    <Compile Include="RobotActions\IsotonicBAction.cs" />
+    <Compile Include="RobotActions\ResetAction.cs" />
+    <Compile Include="RobotActions\RotateAssistedAction.cs" />
+    <Compile Include="RobotActions\RotateFitAction.cs" />
+    <Compile Include="RobotActions\RotateFreeAction.cs" />
+    <Compile Include="RobotActions\RotateGuidedAction.cs" />
+    <Compile Include="RobotActions\RotateStrengthEvaluationAction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LumbarRobot.Common\LumbarRobot.Common.csproj">
+      <Project>{1FC1B04B-AF65-479A-967A-F71F5184E072}</Project>
+      <Name>LumbarRobot.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LumbarRobot.Communication\LumbarRobot.Communication.csproj">
+      <Project>{9F906E88-2724-4406-8442-D684F5CC5965}</Project>
+      <Name>LumbarRobot.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LumbarRobot.Protocol\LumbarRobot.Protocol.csproj">
+      <Project>{B3C2BA26-A02A-429B-AC64-520EC0546D9A}</Project>
+      <Name>LumbarRobot.Protocol</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
